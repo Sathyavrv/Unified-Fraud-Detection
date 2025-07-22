@@ -81,7 +81,7 @@ Trained models are saved in the `models/` directory as `.pkl` files:
 - Update `main.py` to integrate new workflows.
 
 ## License
-[MIT License](LICENSE) *(Add a LICENSE file if needed)*
+[MIT License](LICENSE) 
 
 ## Contact
 For questions or contributions, please open an issue or submit a pull request. 
