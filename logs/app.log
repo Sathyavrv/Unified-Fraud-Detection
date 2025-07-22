@@ -1,0 +1,1514 @@
+2025-02-13 16:46:36,711 - matplotlib - DEBUG - matplotlib data path: /opt/homebrew/lib/python3.11/site-packages/matplotlib/mpl-data
+2025-02-13 16:46:36,716 - matplotlib - DEBUG - CONFIGDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-13 16:46:36,756 - matplotlib - DEBUG - interactive is False
+2025-02-13 16:46:36,756 - matplotlib - DEBUG - platform is darwin
+2025-02-13 16:46:36,794 - matplotlib - DEBUG - CACHEDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-13 16:46:36,796 - matplotlib.font_manager - DEBUG - Using fontManager instance from /Users/sathyanarayanan/.matplotlib/fontlist-v390.json
+2025-02-13 16:46:37,001 - src.config - INFO - Starting main pipeline execution.
+2025-02-13 16:46:37,001 - src.config - DEBUG - DataLoader initialized with file paths.
+2025-02-13 16:46:37,002 - src.config - INFO - Loading transactions from /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/data/transactions_data.csv
+2025-02-13 16:46:50,086 - src.config - DEBUG - Transactions loaded with shape (13305915, 12)
+2025-02-13 16:46:50,094 - src.config - INFO - Loading cards from /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/data/cards_data.csv
+2025-02-13 16:46:50,105 - src.config - DEBUG - Cards loaded with shape (6146, 13)
+2025-02-13 16:46:50,106 - src.config - INFO - Loading users from /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/data/users_data.csv
+2025-02-13 16:46:50,110 - src.config - DEBUG - Users loaded with shape (2000, 14)
+2025-02-13 16:46:50,110 - src.config - INFO - Loading fraud labels from /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/data/train_fraud_labels.json
+2025-02-13 16:46:56,749 - src.config - DEBUG - Fraud labels loaded with shape (8914963, 2)
+2025-02-13 16:46:56,922 - src.config - DEBUG - Preprocessor initialized.
+2025-02-13 16:46:56,922 - src.config - INFO - Preprocessing transactions.
+2025-02-13 16:47:05,801 - src.config - DEBUG - Transactions preprocessed. Shape: (13305915, 12)
+2025-02-13 16:47:05,863 - src.config - INFO - Preprocessing cards.
+2025-02-13 16:47:05,867 - src.config - DEBUG - Cards preprocessed. Shape: (6146, 13)
+2025-02-13 16:47:05,907 - src.config - INFO - Merging datasets.
+2025-02-13 16:50:30,142 - src.config - INFO - Performing common processing on dataframe.
+2025-02-13 16:53:09,228 - src.config - DEBUG - Common processing completed. Shape: (13305915, 46)
+2025-02-13 16:53:15,175 - src.config - DEBUG - Data merged successfully. Final shape: (13305915, 46)
+2025-02-13 16:53:59,003 - src.config - INFO - Processed dataframe for supervised learning. Shape: (8914963, 38)
+2025-02-13 16:54:46,054 - src.config - INFO - Processed dataframe for unsupervised learning. Shape: (13305915, 43)
+2025-02-13 16:54:57,256 - src.config - INFO - Extracting target vector for fraud detection.
+2025-02-13 16:55:00,855 - src.config - DEBUG - Target vector length: 8914963
+2025-02-13 16:55:00,942 - src.config - DEBUG - FraudDetectionModel initialized.
+2025-02-13 16:55:06,494 - src.config - INFO - Data split: 7131970 training samples, 1782993 test samples
+2025-02-13 16:55:06,496 - src.config - INFO - Starting XGBoost hyperparameter tuning with RandomizedSearchCV on the training set.
+2025-02-13 16:55:06,496 - src.config - ERROR - Error during XGBoost hyperparameter tuning: xgboost.sklearn.XGBClassifier() got multiple values for keyword argument 'n_estimators'
+Traceback (most recent call last):
+  File "/Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/src/../src/fraud_detection.py", line 89, in tune_supervised_xgb
+    base_xgb = XGBClassifier(
+               ^^^^^^^^^^^^^^
+TypeError: xgboost.sklearn.XGBClassifier() got multiple values for keyword argument 'n_estimators'
+2025-02-13 16:55:06,503 - src.config - ERROR - An error occurred in the main pipeline: Error in tune_supervised_xgb
+Traceback (most recent call last):
+  File "/Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/src/../src/fraud_detection.py", line 89, in tune_supervised_xgb
+    base_xgb = XGBClassifier(
+               ^^^^^^^^^^^^^^
+TypeError: xgboost.sklearn.XGBClassifier() got multiple values for keyword argument 'n_estimators'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<ipython-input-1-020944ac6610>", line 65, in main
+    tuning_results = fraud_model.tune_supervised_xgb(X_supervised, y_supervised)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/src/../src/fraud_detection.py", line 125, in tune_supervised_xgb
+    raise FraudDetectionModelError("Error in tune_supervised_xgb") from e
+src.fraud_detection.FraudDetectionModelError: Error in tune_supervised_xgb
+2025-02-13 16:58:43,980 - matplotlib - DEBUG - matplotlib data path: /opt/homebrew/lib/python3.11/site-packages/matplotlib/mpl-data
+2025-02-13 16:58:43,984 - matplotlib - DEBUG - CONFIGDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-13 16:58:44,004 - matplotlib - DEBUG - interactive is False
+2025-02-13 16:58:44,004 - matplotlib - DEBUG - platform is darwin
+2025-02-13 16:58:44,033 - matplotlib - DEBUG - CACHEDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-13 16:58:44,035 - matplotlib.font_manager - DEBUG - Using fontManager instance from /Users/sathyanarayanan/.matplotlib/fontlist-v390.json
+2025-02-13 16:58:44,224 - src.config - INFO - Starting main pipeline execution.
+2025-02-13 16:58:44,225 - src.config - DEBUG - DataLoader initialized with file paths.
+2025-02-13 16:58:44,225 - src.config - INFO - Loading transactions from /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/data/transactions_data.csv
+2025-02-13 16:58:56,365 - src.config - DEBUG - Transactions loaded with shape (13305915, 12)
+2025-02-13 16:58:56,367 - src.config - INFO - Loading cards from /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/data/cards_data.csv
+2025-02-13 16:58:56,380 - src.config - DEBUG - Cards loaded with shape (6146, 13)
+2025-02-13 16:58:56,380 - src.config - INFO - Loading users from /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/data/users_data.csv
+2025-02-13 16:58:56,387 - src.config - DEBUG - Users loaded with shape (2000, 14)
+2025-02-13 16:58:56,387 - src.config - INFO - Loading fraud labels from /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/data/train_fraud_labels.json
+2025-02-13 16:59:03,116 - src.config - DEBUG - Fraud labels loaded with shape (8914963, 2)
+2025-02-13 16:59:03,247 - src.config - DEBUG - Preprocessor initialized.
+2025-02-13 16:59:03,247 - src.config - INFO - Preprocessing transactions.
+2025-02-13 16:59:11,977 - src.config - DEBUG - Transactions preprocessed. Shape: (13305915, 12)
+2025-02-13 16:59:12,036 - src.config - INFO - Preprocessing cards.
+2025-02-13 16:59:12,042 - src.config - DEBUG - Cards preprocessed. Shape: (6146, 13)
+2025-02-13 16:59:12,081 - src.config - INFO - Merging datasets.
+2025-02-13 17:02:46,216 - src.config - INFO - Performing common processing on dataframe.
+2025-02-13 17:05:35,455 - src.config - DEBUG - Common processing completed. Shape: (13305915, 46)
+2025-02-13 17:05:41,044 - src.config - DEBUG - Data merged successfully. Final shape: (13305915, 46)
+2025-02-13 17:06:31,239 - src.config - INFO - Processed dataframe for supervised learning. Shape: (8914963, 38)
+2025-02-13 17:07:22,431 - src.config - INFO - Processed dataframe for unsupervised learning. Shape: (13305915, 43)
+2025-02-13 17:07:33,158 - src.config - INFO - Extracting target vector for fraud detection.
+2025-02-13 17:07:39,148 - src.config - DEBUG - Target vector length: 8914963
+2025-02-13 17:07:39,244 - src.config - DEBUG - FraudDetectionModel initialized.
+2025-02-13 17:07:39,245 - src.config - INFO - Training supervised fraud detection model (XGBoost).
+2025-02-13 17:07:45,345 - src.config - INFO - Data split: 7131970 training samples, 1782993 test samples
+2025-02-13 17:08:42,405 - src.config - INFO - XGBoost model training completed in 57.06 seconds.
+2025-02-13 17:08:43,177 - src.config - INFO - XGBoost Fraud Detection Precision: 0.02
+2025-02-13 17:08:44,625 - src.config - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       1.00      0.92      0.96   1780357
+           1       0.02      0.94      0.03      2636
+
+    accuracy                           0.92   1782993
+   macro avg       0.51      0.93      0.50   1782993
+weighted avg       1.00      0.92      0.96   1782993
+
+2025-02-13 17:08:44,626 - src.config - INFO - XGBoost Tuning Results:               precision    recall  f1-score   support
+
+           0       1.00      0.92      0.96   1780357
+           1       0.02      0.94      0.03      2636
+
+    accuracy                           0.92   1782993
+   macro avg       0.51      0.93      0.50   1782993
+weighted avg       1.00      0.92      0.96   1782993
+
+2025-02-13 17:08:46,840 - src.config - INFO - Making predictions with XGBoost model.
+2025-02-13 17:08:48,886 - src.config - DEBUG - XGBoost predictions generated.
+2025-02-13 17:08:53,512 - src.config - INFO - XGBoost predictions saved to /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/data/outputs/xgb_predictions.csv
+2025-02-13 17:08:59,210 - src.config - INFO - Training unsupervised fraud detection model (Isolation Forest).
+2025-02-13 17:15:06,203 - src.config - DEBUG - Isolation Forest predictions generated.
+2025-02-13 17:15:06,490 - src.config - ERROR - An error occurred in the main pipeline: 'FraudDetectionModel' object has no attribute 'save_model'
+Traceback (most recent call last):
+  File "<ipython-input-1-9c666904df2e>", line 84, in main
+    fraud_model.save_model(MODELS_DIR)
+    ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'FraudDetectionModel' object has no attribute 'save_model'
+2025-02-13 17:19:09,178 - matplotlib - DEBUG - matplotlib data path: /opt/homebrew/lib/python3.11/site-packages/matplotlib/mpl-data
+2025-02-13 17:19:09,181 - matplotlib - DEBUG - CONFIGDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-13 17:19:09,200 - matplotlib - DEBUG - interactive is False
+2025-02-13 17:19:09,200 - matplotlib - DEBUG - platform is darwin
+2025-02-13 17:19:09,230 - matplotlib - DEBUG - CACHEDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-13 17:19:09,232 - matplotlib.font_manager - DEBUG - Using fontManager instance from /Users/sathyanarayanan/.matplotlib/fontlist-v390.json
+2025-02-13 17:19:09,414 - src.config - INFO - Starting main pipeline execution.
+2025-02-13 17:19:09,414 - src.config - DEBUG - DataLoader initialized with file paths.
+2025-02-13 17:19:09,414 - src.config - INFO - Loading transactions from /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/data/transactions_data.csv
+2025-02-13 17:19:21,474 - src.config - DEBUG - Transactions loaded with shape (13305915, 12)
+2025-02-13 17:19:21,477 - src.config - INFO - Loading cards from /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/data/cards_data.csv
+2025-02-13 17:19:21,488 - src.config - DEBUG - Cards loaded with shape (6146, 13)
+2025-02-13 17:19:21,489 - src.config - INFO - Loading users from /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/data/users_data.csv
+2025-02-13 17:19:21,493 - src.config - DEBUG - Users loaded with shape (2000, 14)
+2025-02-13 17:19:21,493 - src.config - INFO - Loading fraud labels from /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/data/train_fraud_labels.json
+2025-02-13 17:19:27,847 - src.config - DEBUG - Fraud labels loaded with shape (8914963, 2)
+2025-02-13 17:19:27,969 - src.config - DEBUG - Preprocessor initialized.
+2025-02-13 17:19:27,969 - src.config - INFO - Preprocessing transactions.
+2025-02-13 17:19:36,145 - src.config - DEBUG - Transactions preprocessed. Shape: (13305915, 12)
+2025-02-13 17:19:36,206 - src.config - INFO - Preprocessing cards.
+2025-02-13 17:19:36,210 - src.config - DEBUG - Cards preprocessed. Shape: (6146, 13)
+2025-02-13 17:19:36,253 - src.config - INFO - Merging datasets.
+2025-02-13 17:23:09,060 - src.config - INFO - Performing common processing on dataframe.
+2025-02-13 17:25:54,170 - src.config - DEBUG - Common processing completed. Shape: (13305915, 46)
+2025-02-13 17:26:00,730 - src.config - DEBUG - Data merged successfully. Final shape: (13305915, 46)
+2025-02-13 17:26:50,362 - src.config - INFO - Processed dataframe for supervised learning. Shape: (8914963, 38)
+2025-02-13 17:27:45,260 - src.config - INFO - Processed dataframe for unsupervised learning. Shape: (13305915, 43)
+2025-02-13 17:27:56,313 - src.config - INFO - Extracting target vector for fraud detection.
+2025-02-13 17:28:00,197 - src.config - DEBUG - Target vector length: 8914963
+2025-02-13 17:28:00,311 - src.config - DEBUG - FraudDetectionModel initialized.
+2025-02-13 17:28:00,312 - src.config - INFO - Training supervised fraud detection model (XGBoost).
+2025-02-13 17:28:06,358 - src.config - INFO - Data split: 7131970 training samples, 1782993 test samples
+2025-02-13 17:36:16,113 - src.config - INFO - XGBoost model training completed in 489.75 seconds.
+2025-02-13 17:36:25,153 - src.config - INFO - XGBoost Fraud Detection Precision: 0.29
+2025-02-13 17:36:26,608 - src.config - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00   1780357
+           1       0.29      0.93      0.45      2636
+
+    accuracy                           1.00   1782993
+   macro avg       0.65      0.96      0.72   1782993
+weighted avg       1.00      1.00      1.00   1782993
+
+2025-02-13 17:36:26,609 - src.config - INFO - XGBoost Tuning Results:               precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00   1780357
+           1       0.29      0.93      0.45      2636
+
+    accuracy                           1.00   1782993
+   macro avg       0.65      0.96      0.72   1782993
+weighted avg       1.00      1.00      1.00   1782993
+
+2025-02-13 17:36:29,022 - src.config - INFO - Making predictions with XGBoost model.
+2025-02-13 17:37:04,356 - src.config - DEBUG - XGBoost predictions generated.
+2025-02-13 17:37:10,103 - src.config - INFO - XGBoost predictions saved to /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/data/outputs/xgb_predictions.csv
+2025-02-13 17:37:16,678 - src.config - INFO - Training unsupervised fraud detection model (Isolation Forest).
+2025-02-13 17:42:03,503 - src.config - DEBUG - Isolation Forest predictions generated.
+2025-02-13 17:43:49,248 - src.config - INFO - Unsupervised predictions saved to /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/data/unsupervised_predictions.csv
+2025-02-13 17:43:49,393 - src.config - INFO - Saving fraud detection models.
+2025-02-13 17:43:49,452 - src.config - DEBUG - Fraud detection models saved in /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/models
+2025-02-13 17:43:49,658 - src.config - DEBUG - CustomerSegmentation initialized with 5 clusters.
+2025-02-13 17:43:49,659 - src.config - INFO - Tuning customer segmentation model using inertia metric.
+2025-02-13 17:44:14,905 - src.config - INFO - KMeans with k=3 has inertia: 34957444858.49
+2025-02-13 17:44:43,431 - src.config - INFO - KMeans with k=4 has inertia: 25078434951.75
+2025-02-13 17:45:24,852 - src.config - INFO - KMeans with k=5 has inertia: 17227563174.19
+2025-02-13 17:46:07,483 - src.config - INFO - KMeans with k=6 has inertia: 13156054015.50
+2025-02-13 17:46:51,483 - src.config - INFO - KMeans with k=7 has inertia: 9150049507.91
+2025-02-13 17:46:51,486 - src.config - INFO - Best number of clusters found: 7 with inertia: 9150049507.91
+2025-02-13 17:46:56,329 - src.config - INFO - Best number of clusters found: 7
+2025-02-13 17:46:56,330 - src.config - INFO - Predicting customer segments.
+2025-02-13 17:46:56,522 - src.config - DEBUG - Customer segments predicted.
+2025-02-13 17:46:56,530 - src.config - INFO - Saving customer segmentation model.
+2025-02-13 17:46:56,561 - src.config - DEBUG - Customer segmentation model saved in /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/models
+2025-02-13 17:47:27,567 - src.config - DEBUG - CLVPrediction model initialized.
+2025-02-13 17:47:27,578 - src.config - INFO - Training CLV prediction model using Ridge Regression.
+2025-02-13 17:47:47,003 - src.config - INFO - CLV Prediction MAE: 229579.70
+2025-02-13 17:47:47,049 - src.config - INFO - CLV Prediction MAE: 229579.70
+2025-02-13 17:47:47,054 - src.config - INFO - Saving CLV prediction model.
+2025-02-13 17:47:47,058 - src.config - DEBUG - CLV prediction model saved in /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/models
+2025-02-13 17:49:55,495 - src.config - INFO - Processed dataset saved to /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/data/processed_data.csv
+2025-02-13 17:49:55,519 - src.config - INFO - Pipeline execution completed successfully.
+2025-02-13 17:56:18,486 - matplotlib - DEBUG - matplotlib data path: /opt/homebrew/lib/python3.11/site-packages/matplotlib/mpl-data
+2025-02-13 17:56:18,489 - matplotlib - DEBUG - CONFIGDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-13 17:56:18,520 - matplotlib - DEBUG - interactive is False
+2025-02-13 17:56:18,520 - matplotlib - DEBUG - platform is darwin
+2025-02-13 17:56:18,549 - matplotlib - DEBUG - CACHEDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-13 17:56:18,551 - matplotlib.font_manager - DEBUG - Using fontManager instance from /Users/sathyanarayanan/.matplotlib/fontlist-v390.json
+2025-02-13 17:56:18,746 - src.config - INFO - Starting main pipeline execution.
+2025-02-13 17:56:18,747 - src.config - DEBUG - DataLoader initialized with file paths.
+2025-02-13 17:56:18,747 - src.config - INFO - Loading transactions from /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/data/transactions_data.csv
+2025-02-13 17:56:30,579 - src.config - DEBUG - Transactions loaded with shape (13305915, 12)
+2025-02-13 17:56:30,582 - src.config - INFO - Loading cards from /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/data/cards_data.csv
+2025-02-13 17:56:30,593 - src.config - DEBUG - Cards loaded with shape (6146, 13)
+2025-02-13 17:56:30,593 - src.config - INFO - Loading users from /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/data/users_data.csv
+2025-02-13 17:56:30,598 - src.config - DEBUG - Users loaded with shape (2000, 14)
+2025-02-13 17:56:30,598 - src.config - INFO - Loading fraud labels from /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/data/train_fraud_labels.json
+2025-02-13 17:56:36,824 - src.config - DEBUG - Fraud labels loaded with shape (8914963, 2)
+2025-02-13 17:56:36,943 - src.config - DEBUG - Preprocessor initialized.
+2025-02-13 17:56:36,944 - src.config - INFO - Preprocessing transactions.
+2025-02-13 17:56:45,285 - src.config - DEBUG - Transactions preprocessed. Shape: (13305915, 12)
+2025-02-13 17:56:45,337 - src.config - INFO - Preprocessing cards.
+2025-02-13 17:56:45,342 - src.config - DEBUG - Cards preprocessed. Shape: (6146, 13)
+2025-02-13 17:56:45,380 - src.config - INFO - Merging datasets.
+2025-02-13 18:00:26,958 - src.config - INFO - Performing common processing on dataframe.
+2025-02-13 18:03:23,858 - src.config - DEBUG - Common processing completed. Shape: (13305915, 46)
+2025-02-13 18:03:30,817 - src.config - DEBUG - Data merged successfully. Final shape: (13305915, 46)
+2025-02-13 18:04:21,251 - src.config - INFO - Processed dataframe for supervised learning. Shape: (8914963, 38)
+2025-02-13 18:05:13,479 - src.config - INFO - Processed dataframe for unsupervised learning. Shape: (13305915, 43)
+2025-02-13 18:05:25,090 - src.config - INFO - Extracting target vector for fraud detection.
+2025-02-13 18:05:32,515 - src.config - DEBUG - Target vector length: 8914963
+2025-02-13 18:05:32,615 - src.config - DEBUG - FraudDetectionModel initialized.
+2025-02-13 18:05:32,615 - src.config - INFO - Training supervised fraud detection model (XGBoost).
+2025-02-13 18:05:38,739 - src.config - INFO - Data split: 7131970 training samples, 1782993 test samples
+2025-02-13 18:12:24,815 - src.config - INFO - XGBoost model training completed in 406.07 seconds.
+2025-02-13 18:12:30,413 - src.config - INFO - XGBoost Fraud Detection Precision: 0.98
+2025-02-13 18:12:31,884 - src.config - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00   1780357
+           1       0.98      0.72      0.83      2636
+
+    accuracy                           1.00   1782993
+   macro avg       0.99      0.86      0.91   1782993
+weighted avg       1.00      1.00      1.00   1782993
+
+2025-02-13 18:12:31,886 - src.config - INFO - XGBoost Tuning Results:               precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00   1780357
+           1       0.98      0.72      0.83      2636
+
+    accuracy                           1.00   1782993
+   macro avg       0.99      0.86      0.91   1782993
+weighted avg       1.00      1.00      1.00   1782993
+
+2025-02-13 18:12:34,125 - src.config - INFO - Making predictions with XGBoost model.
+2025-02-13 18:12:58,655 - src.config - DEBUG - XGBoost predictions generated.
+2025-02-13 18:13:03,766 - src.config - INFO - XGBoost predictions saved to /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/data/outputs/xgb_predictions.csv
+2025-02-13 18:13:10,704 - src.config - INFO - Training unsupervised fraud detection model (Isolation Forest).
+2025-02-13 18:17:43,279 - src.config - DEBUG - Isolation Forest predictions generated.
+2025-02-13 18:19:26,714 - src.config - INFO - Unsupervised predictions saved to /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/data/unsupervised_predictions.csv
+2025-02-13 18:19:26,849 - src.config - INFO - Saving fraud detection models.
+2025-02-13 18:19:26,913 - src.config - DEBUG - Fraud detection models saved in /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/models
+2025-02-13 18:19:27,119 - src.config - DEBUG - CustomerSegmentation initialized with 5 clusters.
+2025-02-13 18:19:27,120 - src.config - INFO - Tuning customer segmentation model using inertia metric.
+2025-02-13 18:19:51,074 - src.config - INFO - KMeans with k=3 has inertia: 34957444858.49
+2025-02-13 18:20:20,003 - src.config - INFO - KMeans with k=4 has inertia: 25078434951.75
+2025-02-13 18:20:58,523 - src.config - INFO - KMeans with k=5 has inertia: 17227563174.19
+2025-02-13 18:21:39,798 - src.config - INFO - KMeans with k=6 has inertia: 13156054015.50
+2025-02-13 18:22:20,895 - src.config - INFO - KMeans with k=7 has inertia: 9150049507.91
+2025-02-13 18:22:20,898 - src.config - INFO - Best number of clusters found: 7 with inertia: 9150049507.91
+2025-02-13 18:22:25,423 - src.config - INFO - Best number of clusters found: 7
+2025-02-13 18:22:25,424 - src.config - INFO - Predicting customer segments.
+2025-02-13 18:22:25,606 - src.config - DEBUG - Customer segments predicted.
+2025-02-13 18:22:25,614 - src.config - INFO - Saving customer segmentation model.
+2025-02-13 18:22:25,660 - src.config - DEBUG - Customer segmentation model saved in /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/models
+2025-02-13 18:22:50,586 - src.config - DEBUG - CLVPrediction model initialized.
+2025-02-13 18:22:50,596 - src.config - INFO - Training CLV prediction model using Ridge Regression.
+2025-02-13 18:23:08,893 - src.config - INFO - CLV Prediction MAE: 229579.70
+2025-02-13 18:23:08,932 - src.config - INFO - CLV Prediction MAE: 229579.70
+2025-02-13 18:23:08,933 - src.config - INFO - Saving CLV prediction model.
+2025-02-13 18:23:08,935 - src.config - DEBUG - CLV prediction model saved in /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/models
+2025-02-13 18:25:03,769 - src.config - INFO - Processed dataset saved to /Users/sathyanarayanan/Desktop/github/Financial Transactions Dataset/data/processed_data.csv
+2025-02-13 18:25:03,772 - src.config - INFO - Pipeline execution completed successfully.
+2025-02-13 19:01:55,136 - matplotlib - DEBUG - matplotlib data path: /opt/homebrew/lib/python3.11/site-packages/matplotlib/mpl-data
+2025-02-13 19:01:55,140 - matplotlib - DEBUG - CONFIGDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-13 19:01:55,172 - matplotlib - DEBUG - interactive is False
+2025-02-13 19:01:55,173 - matplotlib - DEBUG - platform is darwin
+2025-02-13 19:01:55,207 - matplotlib - DEBUG - CACHEDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-13 19:01:55,210 - matplotlib.font_manager - DEBUG - Using fontManager instance from /Users/sathyanarayanan/.matplotlib/fontlist-v390.json
+2025-02-13 19:01:55,399 - src.config - INFO - Starting main pipeline execution.
+2025-02-13 19:01:55,400 - src.config - DEBUG - DataLoader initialized with file paths.
+2025-02-13 19:01:55,400 - src.config - INFO - Loading transactions from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/transactions_data.csv
+2025-02-13 19:02:07,562 - src.config - DEBUG - Transactions loaded with shape (13305915, 12)
+2025-02-13 19:02:07,568 - src.config - INFO - Loading cards from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/cards_data.csv
+2025-02-13 19:02:07,579 - src.config - DEBUG - Cards loaded with shape (6146, 13)
+2025-02-13 19:02:07,579 - src.config - INFO - Loading users from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/users_data.csv
+2025-02-13 19:02:07,586 - src.config - DEBUG - Users loaded with shape (2000, 14)
+2025-02-13 19:02:07,586 - src.config - INFO - Loading fraud labels from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/train_fraud_labels.json
+2025-02-13 19:02:14,810 - src.config - DEBUG - Fraud labels loaded with shape (8914963, 2)
+2025-02-13 19:02:14,956 - src.config - DEBUG - Preprocessor initialized.
+2025-02-13 19:02:14,957 - src.config - INFO - Preprocessing transactions.
+2025-02-13 19:02:24,004 - src.config - DEBUG - Transactions preprocessed. Shape: (13305915, 12)
+2025-02-13 19:02:24,063 - src.config - INFO - Preprocessing cards.
+2025-02-13 19:02:24,067 - src.config - DEBUG - Cards preprocessed. Shape: (6146, 13)
+2025-02-13 19:02:24,107 - src.config - INFO - Merging datasets.
+2025-02-13 19:07:11,058 - src.config - INFO - Performing common processing on dataframe.
+2025-02-13 19:09:53,449 - src.config - DEBUG - Common processing completed. Shape: (13305915, 46)
+2025-02-13 19:09:59,373 - src.config - DEBUG - Data merged successfully. Final shape: (13305915, 46)
+2025-02-13 19:10:46,897 - src.config - INFO - Processed dataframe for supervised learning. Shape: (8914963, 38)
+2025-02-13 19:11:37,773 - src.config - INFO - Processed dataframe for unsupervised learning. Shape: (13305915, 43)
+2025-02-13 19:11:48,642 - src.config - INFO - Extracting target vector for fraud detection.
+2025-02-13 19:11:52,585 - src.config - DEBUG - Target vector length: 8914963
+2025-02-13 19:11:52,683 - src.config - DEBUG - FraudDetectionModel initialized.
+2025-02-13 19:11:52,684 - src.config - INFO - Training supervised fraud detection model (XGBoost).
+2025-02-13 19:11:58,713 - src.config - INFO - Data split: 7131970 training samples, 1782993 test samples
+2025-02-13 19:26:48,637 - src.config - INFO - XGBoost model training completed in 889.92 seconds.
+2025-02-13 19:27:03,341 - src.config - INFO - XGBoost Fraud Detection Precision: 0.98
+2025-02-13 19:27:04,778 - src.config - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00   1780357
+           1       0.98      0.78      0.87      2636
+
+    accuracy                           1.00   1782993
+   macro avg       0.99      0.89      0.93   1782993
+weighted avg       1.00      1.00      1.00   1782993
+
+2025-02-13 19:27:04,779 - src.config - INFO - XGBoost Tuning Results:               precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00   1780357
+           1       0.98      0.78      0.87      2636
+
+    accuracy                           1.00   1782993
+   macro avg       0.99      0.89      0.93   1782993
+weighted avg       1.00      1.00      1.00   1782993
+
+2025-02-13 19:27:07,137 - src.config - INFO - Making predictions with XGBoost model.
+2025-02-13 19:28:00,167 - src.config - DEBUG - XGBoost predictions generated.
+2025-02-13 19:28:05,299 - src.config - INFO - XGBoost predictions saved to /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/outputs/xgb_predictions.csv
+2025-02-13 19:28:12,002 - src.config - INFO - Training unsupervised fraud detection model (Isolation Forest).
+2025-02-13 19:40:55,378 - matplotlib - DEBUG - matplotlib data path: /opt/homebrew/lib/python3.11/site-packages/matplotlib/mpl-data
+2025-02-13 19:40:55,381 - matplotlib - DEBUG - CONFIGDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-13 19:40:55,416 - matplotlib - DEBUG - interactive is False
+2025-02-13 19:40:55,416 - matplotlib - DEBUG - platform is darwin
+2025-02-13 19:40:55,445 - matplotlib - DEBUG - CACHEDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-13 19:40:55,447 - matplotlib.font_manager - DEBUG - Using fontManager instance from /Users/sathyanarayanan/.matplotlib/fontlist-v390.json
+2025-02-13 19:40:55,646 - src.config - INFO - Starting main pipeline execution.
+2025-02-13 19:40:55,646 - src.config - DEBUG - DataLoader initialized with file paths.
+2025-02-13 19:40:55,647 - src.config - INFO - Loading transactions from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/transactions_data.csv
+2025-02-13 19:41:07,413 - src.config - DEBUG - Transactions loaded with shape (13305915, 12)
+2025-02-13 19:41:07,415 - src.config - INFO - Loading cards from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/cards_data.csv
+2025-02-13 19:41:07,425 - src.config - DEBUG - Cards loaded with shape (6146, 13)
+2025-02-13 19:41:07,426 - src.config - INFO - Loading users from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/users_data.csv
+2025-02-13 19:41:07,430 - src.config - DEBUG - Users loaded with shape (2000, 14)
+2025-02-13 19:41:07,430 - src.config - INFO - Loading fraud labels from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/train_fraud_labels.json
+2025-02-13 19:41:13,927 - src.config - DEBUG - Fraud labels loaded with shape (8914963, 2)
+2025-02-13 19:41:14,050 - src.config - DEBUG - Preprocessor initialized.
+2025-02-13 19:41:14,051 - src.config - INFO - Preprocessing transactions.
+2025-02-13 19:41:22,228 - src.config - DEBUG - Transactions preprocessed. Shape: (13305915, 12)
+2025-02-13 19:41:22,315 - src.config - INFO - Preprocessing cards.
+2025-02-13 19:41:22,319 - src.config - DEBUG - Cards preprocessed. Shape: (6146, 13)
+2025-02-13 19:41:22,355 - src.config - INFO - Merging datasets.
+2025-02-13 19:45:45,282 - src.config - INFO - Performing common processing on dataframe.
+2025-02-13 19:48:25,998 - src.config - DEBUG - Common processing completed. Shape: (13305915, 46)
+2025-02-13 19:48:31,979 - src.config - DEBUG - Data merged successfully. Final shape: (13305915, 46)
+2025-02-13 19:49:16,748 - src.config - INFO - Processed dataframe for supervised learning. Shape: (8914963, 38)
+2025-02-13 19:50:08,176 - src.config - INFO - Processed dataframe for unsupervised learning. Shape: (13305915, 43)
+2025-02-13 19:50:18,991 - src.config - INFO - Extracting target vector for fraud detection.
+2025-02-13 19:50:23,494 - src.config - DEBUG - Target vector length: 8914963
+2025-02-13 19:50:23,585 - src.config - DEBUG - FraudDetectionModel initialized.
+2025-02-13 19:50:23,585 - src.config - INFO - Training supervised fraud detection model (XGBoost).
+2025-02-13 19:50:30,649 - src.config - INFO - Data split: 7131970 training samples, 1782993 test samples
+2025-02-13 20:03:13,673 - src.config - INFO - XGBoost model training completed in 763.02 seconds.
+2025-02-13 20:03:24,803 - src.config - INFO - XGBoost Fraud Detection Precision: 0.98
+2025-02-13 20:03:26,191 - src.config - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00   1780327
+           1       0.98      0.78      0.87      2666
+
+    accuracy                           1.00   1782993
+   macro avg       0.99      0.89      0.93   1782993
+weighted avg       1.00      1.00      1.00   1782993
+
+2025-02-13 20:03:26,192 - src.config - INFO - XGBoost Tuning Results:               precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00   1780327
+           1       0.98      0.78      0.87      2666
+
+    accuracy                           1.00   1782993
+   macro avg       0.99      0.89      0.93   1782993
+weighted avg       1.00      1.00      1.00   1782993
+
+2025-02-13 20:03:28,596 - src.config - INFO - Making predictions with XGBoost model.
+2025-02-13 20:04:21,448 - src.config - DEBUG - XGBoost predictions generated.
+2025-02-13 20:04:26,658 - src.config - INFO - XGBoost predictions saved to /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/outputs/xgb_predictions.csv
+2025-02-13 20:04:32,962 - src.config - INFO - Training unsupervised fraud detection model (Isolation Forest).
+2025-02-13 20:09:11,113 - src.config - DEBUG - Isolation Forest predictions generated.
+2025-02-13 20:11:05,687 - src.config - INFO - Unsupervised predictions saved to /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/unsupervised_predictions.csv
+2025-02-13 20:11:05,847 - src.config - INFO - Saving fraud detection models.
+2025-02-13 20:11:05,950 - src.config - DEBUG - Fraud detection models saved in /Users/sathyanarayanan/Desktop/github/Financial Transactions/models
+2025-02-13 20:11:06,170 - src.config - DEBUG - CustomerSegmentation initialized with 5 clusters.
+2025-02-13 20:11:06,170 - src.config - INFO - Tuning customer segmentation model using inertia metric.
+2025-02-13 20:11:35,986 - src.config - INFO - KMeans with k=3 has inertia: 34957444858.49
+2025-02-13 20:12:09,568 - src.config - INFO - KMeans with k=4 has inertia: 25078434951.75
+2025-02-13 20:12:54,300 - src.config - INFO - KMeans with k=5 has inertia: 17227563174.19
+2025-02-13 20:13:40,274 - src.config - INFO - KMeans with k=6 has inertia: 13156054015.50
+2025-02-13 20:14:27,078 - src.config - INFO - KMeans with k=7 has inertia: 9150049507.91
+2025-02-13 20:14:27,083 - src.config - INFO - Best number of clusters found: 7 with inertia: 9150049507.91
+2025-02-13 20:14:32,555 - src.config - INFO - Best number of clusters found: 7
+2025-02-13 20:14:32,557 - src.config - INFO - Predicting customer segments.
+2025-02-13 20:14:32,788 - src.config - DEBUG - Customer segments predicted.
+2025-02-13 20:14:32,796 - src.config - INFO - Saving customer segmentation model.
+2025-02-13 20:14:32,833 - src.config - DEBUG - Customer segmentation model saved in /Users/sathyanarayanan/Desktop/github/Financial Transactions/models
+2025-02-13 20:15:04,139 - src.config - DEBUG - CLVPrediction model initialized.
+2025-02-13 20:15:04,149 - src.config - INFO - Training CLV prediction model using Ridge Regression.
+2025-02-13 20:15:27,408 - src.config - INFO - CLV Prediction MAE: 229579.70
+2025-02-13 20:15:27,445 - src.config - INFO - CLV Prediction MAE: 229579.70
+2025-02-13 20:15:27,462 - src.config - INFO - Saving CLV prediction model.
+2025-02-13 20:15:27,466 - src.config - DEBUG - CLV prediction model saved in /Users/sathyanarayanan/Desktop/github/Financial Transactions/models
+2025-02-13 20:17:26,720 - src.config - INFO - Processed dataset saved to /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/processed_data.csv
+2025-02-13 20:17:26,728 - src.config - INFO - Pipeline execution completed successfully.
+2025-02-13 22:59:00,330 - matplotlib - DEBUG - matplotlib data path: /opt/homebrew/lib/python3.11/site-packages/matplotlib/mpl-data
+2025-02-13 22:59:00,339 - matplotlib - DEBUG - CONFIGDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-13 22:59:00,388 - matplotlib - DEBUG - interactive is False
+2025-02-13 22:59:00,388 - matplotlib - DEBUG - platform is darwin
+2025-02-13 22:59:00,424 - matplotlib - DEBUG - CACHEDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-13 22:59:00,427 - matplotlib.font_manager - DEBUG - Using fontManager instance from /Users/sathyanarayanan/.matplotlib/fontlist-v390.json
+2025-02-13 22:59:00,932 - src.config - INFO - Starting main pipeline execution.
+2025-02-13 22:59:00,932 - src.config - DEBUG - DataLoader initialized with file paths.
+2025-02-13 22:59:00,933 - src.config - INFO - Loading transactions from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/transactions_data.csv
+2025-02-13 22:59:14,389 - src.config - DEBUG - Transactions loaded with shape (13305915, 12)
+2025-02-13 22:59:14,396 - src.config - INFO - Loading cards from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/cards_data.csv
+2025-02-13 22:59:14,407 - src.config - DEBUG - Cards loaded with shape (6146, 13)
+2025-02-13 22:59:14,407 - src.config - INFO - Loading users from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/users_data.csv
+2025-02-13 22:59:14,415 - src.config - DEBUG - Users loaded with shape (2000, 14)
+2025-02-13 22:59:14,416 - src.config - INFO - Loading fraud labels from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/train_fraud_labels.json
+2025-02-13 22:59:22,462 - src.config - DEBUG - Fraud labels loaded with shape (8914963, 2)
+2025-02-13 22:59:22,538 - src.config - DEBUG - Preprocessor initialized.
+2025-02-13 22:59:22,539 - src.config - INFO - Preprocessing transactions.
+2025-02-13 22:59:32,017 - src.config - DEBUG - Transactions preprocessed. Shape: (13305915, 12)
+2025-02-13 22:59:32,091 - src.config - INFO - Preprocessing cards.
+2025-02-13 22:59:32,096 - src.config - DEBUG - Cards preprocessed. Shape: (6146, 13)
+2025-02-13 22:59:32,134 - src.config - INFO - Merging datasets.
+2025-02-13 23:04:04,587 - src.config - INFO - Performing common processing on dataframe.
+2025-02-13 23:07:31,136 - src.config - DEBUG - Common processing completed. Shape: (13305915, 46)
+2025-02-13 23:07:37,740 - src.config - DEBUG - Data merged successfully. Final shape: (13305915, 46)
+2025-02-13 23:07:55,919 - src.config - INFO - Processed dataframe for supervised learning. Shape: (13305915, 38)
+2025-02-14 00:18:31,632 - matplotlib - DEBUG - matplotlib data path: /opt/homebrew/lib/python3.11/site-packages/matplotlib/mpl-data
+2025-02-14 00:18:31,635 - matplotlib - DEBUG - CONFIGDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-14 00:18:31,673 - matplotlib - DEBUG - interactive is False
+2025-02-14 00:18:31,673 - matplotlib - DEBUG - platform is darwin
+2025-02-14 00:18:31,702 - matplotlib - DEBUG - CACHEDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-14 00:18:31,705 - matplotlib.font_manager - DEBUG - Using fontManager instance from /Users/sathyanarayanan/.matplotlib/fontlist-v390.json
+2025-02-14 00:18:31,900 - src.config - INFO - Starting main pipeline execution.
+2025-02-14 00:18:31,900 - src.config - DEBUG - DataLoader initialized with file paths.
+2025-02-14 00:18:31,900 - src.config - INFO - Loading transactions from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/transactions_data.csv
+2025-02-14 00:18:43,948 - src.config - DEBUG - Transactions loaded with shape (13305915, 12)
+2025-02-14 00:18:43,955 - src.config - INFO - Loading cards from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/cards_data.csv
+2025-02-14 00:18:43,966 - src.config - DEBUG - Cards loaded with shape (6146, 13)
+2025-02-14 00:18:43,967 - src.config - INFO - Loading users from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/users_data.csv
+2025-02-14 00:18:43,971 - src.config - DEBUG - Users loaded with shape (2000, 14)
+2025-02-14 00:18:43,971 - src.config - INFO - Loading fraud labels from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/train_fraud_labels.json
+2025-02-14 00:18:49,991 - src.config - DEBUG - Fraud labels loaded with shape (8914963, 2)
+2025-02-14 00:18:50,163 - src.config - DEBUG - Preprocessor initialized.
+2025-02-14 00:18:50,163 - src.config - INFO - Preprocessing transactions.
+2025-02-14 00:18:57,899 - src.config - DEBUG - Transactions preprocessed. Shape: (13305915, 12)
+2025-02-14 00:18:57,950 - src.config - INFO - Preprocessing cards.
+2025-02-14 00:18:57,956 - src.config - DEBUG - Cards preprocessed. Shape: (6146, 13)
+2025-02-14 00:18:57,995 - src.config - INFO - Merging datasets.
+2025-02-14 00:22:31,777 - src.config - INFO - Performing common processing on dataframe.
+2025-02-14 00:26:53,884 - matplotlib - DEBUG - matplotlib data path: /opt/homebrew/lib/python3.11/site-packages/matplotlib/mpl-data
+2025-02-14 00:26:53,888 - matplotlib - DEBUG - CONFIGDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-14 00:26:53,920 - matplotlib - DEBUG - interactive is False
+2025-02-14 00:26:53,921 - matplotlib - DEBUG - platform is darwin
+2025-02-14 00:26:53,949 - matplotlib - DEBUG - CACHEDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-14 00:26:53,951 - matplotlib.font_manager - DEBUG - Using fontManager instance from /Users/sathyanarayanan/.matplotlib/fontlist-v390.json
+2025-02-14 00:26:54,142 - src.config - INFO - Starting main pipeline execution.
+2025-02-14 00:26:54,142 - src.config - DEBUG - DataLoader initialized with file paths.
+2025-02-14 00:26:54,142 - src.config - INFO - Loading transactions from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/transactions_data.csv
+2025-02-14 00:27:06,859 - src.config - DEBUG - Transactions loaded with shape (13305915, 12)
+2025-02-14 00:27:06,862 - src.config - INFO - Loading cards from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/cards_data.csv
+2025-02-14 00:27:06,875 - src.config - DEBUG - Cards loaded with shape (6146, 13)
+2025-02-14 00:27:06,876 - src.config - INFO - Loading users from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/users_data.csv
+2025-02-14 00:27:06,881 - src.config - DEBUG - Users loaded with shape (2000, 14)
+2025-02-14 00:27:06,882 - src.config - INFO - Loading fraud labels from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/train_fraud_labels.json
+2025-02-14 00:27:14,373 - src.config - DEBUG - Fraud labels loaded with shape (8914963, 2)
+2025-02-14 00:27:14,499 - src.config - DEBUG - Preprocessor initialized.
+2025-02-14 00:27:14,500 - src.config - INFO - Preprocessing transactions.
+2025-02-14 00:27:23,527 - src.config - DEBUG - Transactions preprocessed. Shape: (13305915, 12)
+2025-02-14 00:27:23,586 - src.config - INFO - Preprocessing cards.
+2025-02-14 00:27:23,593 - src.config - DEBUG - Cards preprocessed. Shape: (6146, 13)
+2025-02-14 00:27:23,632 - src.config - INFO - Merging datasets.
+2025-02-14 00:31:48,458 - src.config - INFO - Performing common processing on dataframe.
+2025-02-14 00:31:48,530 - src.config - DEBUG - Processing 'date' column.
+2025-02-14 00:31:51,998 - src.config - DEBUG - Processed 'date' column.
+2025-02-14 00:31:52,000 - src.config - DEBUG - Processing 'expires' column.
+2025-02-14 00:32:29,727 - src.config - DEBUG - Processed 'expires' column.
+2025-02-14 00:32:54,734 - src.config - DEBUG - Dropped columns: ['date', 'acct_open_date', 'expires', 'card_number', 'cvv']
+2025-02-14 00:32:54,740 - src.config - DEBUG - Processing monetary column: amount
+2025-02-14 00:33:08,694 - src.config - DEBUG - Processed monetary column: amount
+2025-02-14 00:33:08,697 - src.config - DEBUG - Processing monetary column: per_capita_income
+2025-02-14 00:33:17,411 - src.config - DEBUG - Processed monetary column: per_capita_income
+2025-02-14 00:33:17,417 - src.config - DEBUG - Processing monetary column: yearly_income
+2025-02-14 00:33:26,233 - src.config - DEBUG - Processed monetary column: yearly_income
+2025-02-14 00:33:26,237 - src.config - DEBUG - Processing monetary column: total_debt
+2025-02-14 00:33:35,380 - src.config - DEBUG - Processed monetary column: total_debt
+2025-02-14 00:33:35,382 - src.config - DEBUG - Processing monetary column: credit_limit
+2025-02-14 00:33:44,681 - src.config - DEBUG - Processed monetary column: credit_limit
+2025-02-14 00:33:44,684 - src.config - DEBUG - Label encoding column: use_chip
+2025-02-14 00:33:46,140 - src.config - DEBUG - Label encoded column: use_chip
+2025-02-14 00:33:46,141 - src.config - DEBUG - Label encoding column: merchant_city
+2025-02-14 00:33:48,442 - src.config - DEBUG - Label encoded column: merchant_city
+2025-02-14 00:33:48,442 - src.config - DEBUG - Label encoding column: merchant_state
+2025-02-14 00:33:49,817 - src.config - DEBUG - Label encoded column: merchant_state
+2025-02-14 00:33:49,819 - src.config - DEBUG - Label encoding column: errors
+2025-02-14 00:33:51,001 - src.config - DEBUG - Label encoded column: errors
+2025-02-14 00:33:51,003 - src.config - DEBUG - Label encoding column: card_brand
+2025-02-14 00:33:52,313 - src.config - DEBUG - Label encoded column: card_brand
+2025-02-14 00:33:52,313 - src.config - DEBUG - Label encoding column: card_type
+2025-02-14 00:33:53,609 - src.config - DEBUG - Label encoded column: card_type
+2025-02-14 00:33:53,610 - src.config - DEBUG - Label encoding column: has_chip
+2025-02-14 00:33:54,801 - src.config - DEBUG - Label encoded column: has_chip
+2025-02-14 00:33:54,803 - src.config - DEBUG - Label encoding column: card_on_dark_web
+2025-02-14 00:33:55,977 - src.config - DEBUG - Label encoded column: card_on_dark_web
+2025-02-14 00:33:55,979 - src.config - DEBUG - Label encoding column: gender
+2025-02-14 00:33:57,410 - src.config - DEBUG - Label encoded column: gender
+2025-02-14 00:35:17,649 - matplotlib - DEBUG - matplotlib data path: /opt/homebrew/lib/python3.11/site-packages/matplotlib/mpl-data
+2025-02-14 00:35:17,652 - matplotlib - DEBUG - CONFIGDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-14 00:35:17,723 - matplotlib - DEBUG - interactive is False
+2025-02-14 00:35:17,724 - matplotlib - DEBUG - platform is darwin
+2025-02-14 00:35:17,750 - matplotlib - DEBUG - CACHEDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-14 00:35:17,753 - matplotlib.font_manager - DEBUG - Using fontManager instance from /Users/sathyanarayanan/.matplotlib/fontlist-v390.json
+2025-02-14 00:35:17,943 - src.config - INFO - Starting main pipeline execution.
+2025-02-14 00:35:17,943 - src.config - DEBUG - DataLoader initialized with file paths.
+2025-02-14 00:35:17,944 - src.config - INFO - Loading transactions from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/transactions_data.csv
+2025-02-14 00:35:30,329 - src.config - DEBUG - Transactions loaded with shape (13305915, 12)
+2025-02-14 00:35:30,332 - src.config - INFO - Loading cards from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/cards_data.csv
+2025-02-14 00:35:30,344 - src.config - DEBUG - Cards loaded with shape (6146, 13)
+2025-02-14 00:35:30,344 - src.config - INFO - Loading users from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/users_data.csv
+2025-02-14 00:35:30,349 - src.config - DEBUG - Users loaded with shape (2000, 14)
+2025-02-14 00:35:30,350 - src.config - INFO - Loading fraud labels from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/train_fraud_labels.json
+2025-02-14 00:35:37,650 - src.config - DEBUG - Fraud labels loaded with shape (8914963, 2)
+2025-02-14 00:35:37,782 - src.config - DEBUG - Preprocessor initialized.
+2025-02-14 00:35:37,782 - src.config - INFO - Preprocessing transactions.
+2025-02-14 00:35:46,802 - src.config - DEBUG - Transactions preprocessed. Shape: (13305915, 12)
+2025-02-14 00:35:46,870 - src.config - INFO - Preprocessing cards.
+2025-02-14 00:35:46,874 - src.config - DEBUG - Cards preprocessed. Shape: (6146, 13)
+2025-02-14 00:35:46,919 - src.config - INFO - Merging datasets.
+2025-02-14 00:40:38,258 - src.config - INFO - Performing common processing on dataframe.
+2025-02-14 00:40:38,332 - src.config - DEBUG - Processing 'date' column.
+2025-02-14 00:40:41,965 - src.config - DEBUG - Processed 'date' column.
+2025-02-14 00:40:41,968 - src.config - DEBUG - Processing 'expires' column.
+2025-02-14 00:41:18,527 - src.config - DEBUG - Processed 'expires' column.
+2025-02-14 00:41:40,931 - src.config - DEBUG - Dropped columns: ['date', 'acct_open_date', 'expires', 'card_number', 'cvv', 'transaction_id']
+2025-02-14 00:41:53,486 - src.config - DEBUG - Processing monetary column: amount
+2025-02-14 00:42:07,007 - src.config - DEBUG - Processed monetary column: amount
+2025-02-14 00:42:07,024 - src.config - DEBUG - Processing monetary column: per_capita_income
+2025-02-14 00:42:15,995 - src.config - DEBUG - Processed monetary column: per_capita_income
+2025-02-14 00:42:15,998 - src.config - DEBUG - Processing monetary column: yearly_income
+2025-02-14 00:42:25,303 - src.config - DEBUG - Processed monetary column: yearly_income
+2025-02-14 00:42:25,305 - src.config - DEBUG - Processing monetary column: total_debt
+2025-02-14 00:42:34,866 - src.config - DEBUG - Processed monetary column: total_debt
+2025-02-14 00:42:34,879 - src.config - DEBUG - Processing monetary column: credit_limit
+2025-02-14 00:42:44,355 - src.config - DEBUG - Processed monetary column: credit_limit
+2025-02-14 00:42:44,548 - src.config - DEBUG - Label encoding column: use_chip
+2025-02-14 00:42:45,949 - src.config - DEBUG - Label encoded column: use_chip
+2025-02-14 00:42:45,951 - src.config - DEBUG - Label encoding column: merchant_city
+2025-02-14 00:42:47,949 - src.config - DEBUG - Label encoded column: merchant_city
+2025-02-14 00:42:47,950 - src.config - DEBUG - Label encoding column: merchant_state
+2025-02-14 00:42:49,315 - src.config - DEBUG - Label encoded column: merchant_state
+2025-02-14 00:42:49,317 - src.config - DEBUG - Label encoding column: errors
+2025-02-14 00:42:50,468 - src.config - DEBUG - Label encoded column: errors
+2025-02-14 00:42:50,469 - src.config - DEBUG - Label encoding column: card_brand
+2025-02-14 00:42:51,994 - src.config - DEBUG - Label encoded column: card_brand
+2025-02-14 00:42:51,995 - src.config - DEBUG - Label encoding column: card_type
+2025-02-14 00:42:53,276 - src.config - DEBUG - Label encoded column: card_type
+2025-02-14 00:42:53,277 - src.config - DEBUG - Label encoding column: has_chip
+2025-02-14 00:42:54,588 - src.config - DEBUG - Label encoded column: has_chip
+2025-02-14 00:42:54,588 - src.config - DEBUG - Label encoding column: card_on_dark_web
+2025-02-14 00:42:55,801 - src.config - DEBUG - Label encoded column: card_on_dark_web
+2025-02-14 00:42:55,802 - src.config - DEBUG - Label encoding column: gender
+2025-02-14 00:42:57,241 - src.config - DEBUG - Label encoded column: gender
+2025-02-14 00:42:57,303 - src.config - DEBUG - Common processing completed. Shape: (13305915, 44)
+2025-02-14 00:42:59,108 - src.config - DEBUG - Data merged successfully. Final shape: (13305915, 44)
+2025-02-14 00:43:53,500 - src.config - INFO - Processed dataframe for supervised learning. Shape: (8914963, 36)
+2025-02-14 00:46:49,855 - matplotlib - DEBUG - matplotlib data path: /opt/homebrew/lib/python3.11/site-packages/matplotlib/mpl-data
+2025-02-14 00:46:49,858 - matplotlib - DEBUG - CONFIGDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-14 00:46:49,979 - matplotlib - DEBUG - interactive is False
+2025-02-14 00:46:49,979 - matplotlib - DEBUG - platform is darwin
+2025-02-14 00:46:50,008 - matplotlib - DEBUG - CACHEDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-14 00:46:50,011 - matplotlib.font_manager - DEBUG - Using fontManager instance from /Users/sathyanarayanan/.matplotlib/fontlist-v390.json
+2025-02-14 00:46:50,498 - src.config - INFO - Starting main pipeline execution.
+2025-02-14 00:46:50,499 - src.config - DEBUG - DataLoader initialized with file paths.
+2025-02-14 00:46:50,500 - src.config - INFO - Loading transactions from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/transactions_data.csv
+2025-02-14 00:47:02,110 - src.config - DEBUG - Transactions loaded with shape (13305915, 12)
+2025-02-14 00:47:02,114 - src.config - INFO - Loading cards from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/cards_data.csv
+2025-02-14 00:47:02,125 - src.config - DEBUG - Cards loaded with shape (6146, 13)
+2025-02-14 00:47:02,125 - src.config - INFO - Loading users from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/users_data.csv
+2025-02-14 00:47:02,130 - src.config - DEBUG - Users loaded with shape (2000, 14)
+2025-02-14 00:47:02,130 - src.config - INFO - Loading fraud labels from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/train_fraud_labels.json
+2025-02-14 00:47:08,447 - src.config - DEBUG - Fraud labels loaded with shape (8914963, 2)
+2025-02-14 00:47:08,612 - src.config - DEBUG - Preprocessor initialized.
+2025-02-14 00:47:08,612 - src.config - INFO - Preprocessing transactions.
+2025-02-14 00:47:16,893 - src.config - DEBUG - Transactions preprocessed. Shape: (13305915, 12)
+2025-02-14 00:47:16,949 - src.config - INFO - Preprocessing cards.
+2025-02-14 00:47:16,954 - src.config - DEBUG - Cards preprocessed. Shape: (6146, 13)
+2025-02-14 00:47:16,993 - src.config - INFO - Merging datasets.
+2025-02-14 00:49:43,498 - src.config - INFO - Performing common processing on dataframe.
+2025-02-14 00:49:43,541 - src.config - DEBUG - Processing 'date' column.
+2025-02-14 00:49:46,782 - src.config - DEBUG - Processed 'date' column.
+2025-02-14 00:49:46,784 - src.config - DEBUG - Processing 'expires' column.
+2025-02-14 00:50:18,029 - src.config - DEBUG - Processed 'expires' column.
+2025-02-14 00:50:32,183 - src.config - DEBUG - Dropped columns: ['date', 'acct_open_date', 'expires', 'card_number', 'cvv', 'transaction_id']
+2025-02-14 00:50:37,909 - src.config - DEBUG - Processing monetary column: amount
+2025-02-14 00:50:50,847 - src.config - DEBUG - Processed monetary column: amount
+2025-02-14 00:50:50,849 - src.config - DEBUG - Processing monetary column: per_capita_income
+2025-02-14 00:50:59,826 - src.config - DEBUG - Processed monetary column: per_capita_income
+2025-02-14 00:50:59,835 - src.config - DEBUG - Processing monetary column: yearly_income
+2025-02-14 00:51:08,558 - src.config - DEBUG - Processed monetary column: yearly_income
+2025-02-14 00:51:08,561 - src.config - DEBUG - Processing monetary column: total_debt
+2025-02-14 00:51:17,081 - src.config - DEBUG - Processed monetary column: total_debt
+2025-02-14 00:51:17,084 - src.config - DEBUG - Processing monetary column: credit_limit
+2025-02-14 00:51:26,090 - src.config - DEBUG - Processed monetary column: credit_limit
+2025-02-14 00:51:26,212 - src.config - DEBUG - Label encoding column: use_chip
+2025-02-14 00:51:27,559 - src.config - DEBUG - Label encoded column: use_chip
+2025-02-14 00:51:27,559 - src.config - DEBUG - Label encoding column: merchant_city
+2025-02-14 00:51:29,763 - src.config - DEBUG - Label encoded column: merchant_city
+2025-02-14 00:51:29,765 - src.config - DEBUG - Label encoding column: merchant_state
+2025-02-14 00:51:31,060 - src.config - DEBUG - Label encoded column: merchant_state
+2025-02-14 00:51:31,060 - src.config - DEBUG - Label encoding column: errors
+2025-02-14 00:51:32,176 - src.config - DEBUG - Label encoded column: errors
+2025-02-14 00:51:32,176 - src.config - DEBUG - Label encoding column: card_brand
+2025-02-14 00:51:33,372 - src.config - DEBUG - Label encoded column: card_brand
+2025-02-14 00:51:33,372 - src.config - DEBUG - Label encoding column: card_type
+2025-02-14 00:51:34,655 - src.config - DEBUG - Label encoded column: card_type
+2025-02-14 00:51:34,655 - src.config - DEBUG - Label encoding column: has_chip
+2025-02-14 00:51:35,827 - src.config - DEBUG - Label encoded column: has_chip
+2025-02-14 00:51:35,830 - src.config - DEBUG - Label encoding column: card_on_dark_web
+2025-02-14 00:51:37,052 - src.config - DEBUG - Label encoded column: card_on_dark_web
+2025-02-14 00:51:37,052 - src.config - DEBUG - Label encoding column: gender
+2025-02-14 00:51:38,387 - src.config - DEBUG - Label encoded column: gender
+2025-02-14 00:51:38,444 - src.config - DEBUG - Common processing completed. Shape: (13305915, 44)
+2025-02-14 00:51:40,180 - src.config - DEBUG - Data merged successfully. Final shape: (13305915, 44)
+2025-02-14 00:52:26,137 - src.config - INFO - Processed dataframe for supervised learning. Shape: (8914963, 36)
+2025-02-14 00:53:04,145 - src.config - INFO - Processed dataframe for unsupervised learning. Shape: (13305915, 41)
+2025-02-14 00:53:13,231 - src.config - INFO - Extracting target vector for fraud detection.
+2025-02-14 00:53:16,785 - src.config - DEBUG - Target vector length: 8914963
+2025-02-14 00:53:16,878 - src.config - DEBUG - FraudDetectionModel initialized.
+2025-02-14 00:53:16,878 - src.config - INFO - Training supervised fraud detection model (XGBoost).
+2025-02-14 00:53:23,654 - src.config - INFO - Data split: 7131970 training samples, 1782993 test samples
+2025-02-14 01:08:47,299 - src.config - INFO - XGBoost model training completed in 923.64 seconds.
+2025-02-14 01:09:02,273 - src.config - INFO - XGBoost Fraud Detection Precision: 0.98
+2025-02-14 01:09:03,596 - src.config - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00   1780327
+           1       0.98      0.78      0.87      2666
+
+    accuracy                           1.00   1782993
+   macro avg       0.99      0.89      0.93   1782993
+weighted avg       1.00      1.00      1.00   1782993
+
+2025-02-14 01:09:03,596 - src.config - INFO - XGBoost Tuning Results:               precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00   1780327
+           1       0.98      0.78      0.87      2666
+
+    accuracy                           1.00   1782993
+   macro avg       0.99      0.89      0.93   1782993
+weighted avg       1.00      1.00      1.00   1782993
+
+2025-02-14 01:09:05,611 - src.config - INFO - Making predictions with XGBoost model.
+2025-02-14 01:10:08,696 - src.config - DEBUG - XGBoost predictions generated.
+2025-02-14 01:10:13,474 - src.config - INFO - XGBoost predictions saved to /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/outputs/xgb_predictions.csv
+2025-02-14 01:10:18,400 - src.config - INFO - Training unsupervised fraud detection model (Isolation Forest).
+2025-02-14 01:14:08,920 - src.config - DEBUG - Isolation Forest predictions generated.
+2025-02-14 01:15:46,110 - src.config - INFO - Unsupervised predictions saved to /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/unsupervised_predictions.csv
+2025-02-14 01:15:46,178 - src.config - INFO - Saving fraud detection models.
+2025-02-14 01:15:46,240 - src.config - DEBUG - Fraud detection models saved in /Users/sathyanarayanan/Desktop/github/Financial Transactions/models
+2025-02-14 01:15:47,871 - src.config - DEBUG - CustomerSegmentation initialized with 5 clusters and features: ['amount', 'use_chip', 'merchant_city', 'merchant_state', 'mcc', 'errors', 'card_brand', 'card_type', 'credit_limit', 'year_pin_last_changed', 'card_on_dark_web', 'current_age', 'retirement_age', 'per_capita_income', 'yearly_income', 'total_debt', 'credit_score', 'num_credit_cards', 'transaction_hour', 'transaction_day', 'transaction_month', 'transaction_year', 'transaction_weekday', 'transaction_quarter', 'day_of_year', 'week_of_year', 'expires_month', 'expires_year']
+2025-02-14 01:15:47,873 - src.config - INFO - Tuning customer segmentation model using inertia metric.
+2025-02-14 01:16:01,672 - src.config - ERROR - Error tuning customer segmentation: The 'max_iter' parameter of KMeans must be an int in the range [1, inf). Got [300] instead.
+Traceback (most recent call last):
+  File "/Users/sathyanarayanan/Desktop/github/Financial Transactions/src/../src/customer_segmentation.py", line 106, in tune
+    kmeans.fit(X_scaled)
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/base.py", line 1466, in wrapper
+    estimator._validate_params()
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/base.py", line 666, in _validate_params
+    validate_parameter_constraints(
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/utils/_param_validation.py", line 95, in validate_parameter_constraints
+    raise InvalidParameterError(
+sklearn.utils._param_validation.InvalidParameterError: The 'max_iter' parameter of KMeans must be an int in the range [1, inf). Got [300] instead.
+2025-02-14 01:16:01,721 - src.config - ERROR - An error occurred in the main pipeline: The 'max_iter' parameter of KMeans must be an int in the range [1, inf). Got [300] instead.
+Traceback (most recent call last):
+  File "<ipython-input-1-93b881e56135>", line 105, in main
+    best_k = segmentation.tune(segmentation_features)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sathyanarayanan/Desktop/github/Financial Transactions/src/../src/customer_segmentation.py", line 106, in tune
+    kmeans.fit(X_scaled)
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/base.py", line 1466, in wrapper
+    estimator._validate_params()
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/base.py", line 666, in _validate_params
+    validate_parameter_constraints(
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/utils/_param_validation.py", line 95, in validate_parameter_constraints
+    raise InvalidParameterError(
+sklearn.utils._param_validation.InvalidParameterError: The 'max_iter' parameter of KMeans must be an int in the range [1, inf). Got [300] instead.
+2025-02-14 01:18:26,580 - matplotlib - DEBUG - matplotlib data path: /opt/homebrew/lib/python3.11/site-packages/matplotlib/mpl-data
+2025-02-14 01:18:26,584 - matplotlib - DEBUG - CONFIGDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-14 01:18:26,616 - matplotlib - DEBUG - interactive is False
+2025-02-14 01:18:26,617 - matplotlib - DEBUG - platform is darwin
+2025-02-14 01:18:26,643 - matplotlib - DEBUG - CACHEDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-14 01:18:26,645 - matplotlib.font_manager - DEBUG - Using fontManager instance from /Users/sathyanarayanan/.matplotlib/fontlist-v390.json
+2025-02-14 01:18:26,835 - src.config - INFO - Starting main pipeline execution.
+2025-02-14 01:18:26,836 - src.config - DEBUG - DataLoader initialized with file paths.
+2025-02-14 01:18:26,836 - src.config - INFO - Loading transactions from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/transactions_data.csv
+2025-02-14 01:18:38,012 - src.config - DEBUG - Transactions loaded with shape (13305915, 12)
+2025-02-14 01:18:38,015 - src.config - INFO - Loading cards from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/cards_data.csv
+2025-02-14 01:18:38,025 - src.config - DEBUG - Cards loaded with shape (6146, 13)
+2025-02-14 01:18:38,025 - src.config - INFO - Loading users from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/users_data.csv
+2025-02-14 01:18:38,030 - src.config - DEBUG - Users loaded with shape (2000, 14)
+2025-02-14 01:18:38,031 - src.config - INFO - Loading fraud labels from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/train_fraud_labels.json
+2025-02-14 01:18:43,545 - src.config - DEBUG - Fraud labels loaded with shape (8914963, 2)
+2025-02-14 01:18:43,639 - src.config - DEBUG - Preprocessor initialized.
+2025-02-14 01:18:43,640 - src.config - INFO - Preprocessing transactions.
+2025-02-14 01:18:51,469 - src.config - DEBUG - Transactions preprocessed. Shape: (13305915, 12)
+2025-02-14 01:18:51,521 - src.config - INFO - Preprocessing cards.
+2025-02-14 01:18:51,525 - src.config - DEBUG - Cards preprocessed. Shape: (6146, 13)
+2025-02-14 01:18:51,559 - src.config - INFO - Merging datasets.
+2025-02-14 01:22:04,963 - src.config - INFO - Performing common processing on dataframe.
+2025-02-14 01:22:04,994 - src.config - DEBUG - Processing 'date' column.
+2025-02-14 01:22:08,359 - src.config - DEBUG - Processed 'date' column.
+2025-02-14 01:22:08,359 - src.config - DEBUG - Processing 'expires' column.
+2025-02-14 01:22:43,860 - src.config - DEBUG - Processed 'expires' column.
+2025-02-14 01:23:09,057 - src.config - DEBUG - Dropped columns: ['date', 'acct_open_date', 'expires', 'card_number', 'cvv', 'transaction_id']
+2025-02-14 01:23:22,405 - src.config - DEBUG - Processing monetary column: amount
+2025-02-14 01:23:35,291 - src.config - DEBUG - Processed monetary column: amount
+2025-02-14 01:23:35,294 - src.config - DEBUG - Processing monetary column: per_capita_income
+2025-02-14 01:23:44,576 - src.config - DEBUG - Processed monetary column: per_capita_income
+2025-02-14 01:23:44,578 - src.config - DEBUG - Processing monetary column: yearly_income
+2025-02-14 01:23:53,454 - src.config - DEBUG - Processed monetary column: yearly_income
+2025-02-14 01:23:53,457 - src.config - DEBUG - Processing monetary column: total_debt
+2025-02-14 01:24:02,551 - src.config - DEBUG - Processed monetary column: total_debt
+2025-02-14 01:24:02,554 - src.config - DEBUG - Processing monetary column: credit_limit
+2025-02-14 01:24:11,794 - src.config - DEBUG - Processed monetary column: credit_limit
+2025-02-14 01:24:11,996 - src.config - DEBUG - Label encoding column: use_chip
+2025-02-14 01:24:13,559 - src.config - DEBUG - Label encoded column: use_chip
+2025-02-14 01:24:13,560 - src.config - DEBUG - Label encoding column: merchant_city
+2025-02-14 01:24:15,583 - src.config - DEBUG - Label encoded column: merchant_city
+2025-02-14 01:24:15,584 - src.config - DEBUG - Label encoding column: merchant_state
+2025-02-14 01:24:16,953 - src.config - DEBUG - Label encoded column: merchant_state
+2025-02-14 01:24:16,954 - src.config - DEBUG - Label encoding column: errors
+2025-02-14 01:24:18,110 - src.config - DEBUG - Label encoded column: errors
+2025-02-14 01:24:18,112 - src.config - DEBUG - Label encoding column: card_brand
+2025-02-14 01:24:19,407 - src.config - DEBUG - Label encoded column: card_brand
+2025-02-14 01:24:19,407 - src.config - DEBUG - Label encoding column: card_type
+2025-02-14 01:24:20,586 - src.config - DEBUG - Label encoded column: card_type
+2025-02-14 01:24:20,586 - src.config - DEBUG - Label encoding column: has_chip
+2025-02-14 01:24:21,741 - src.config - DEBUG - Label encoded column: has_chip
+2025-02-14 01:24:21,743 - src.config - DEBUG - Label encoding column: card_on_dark_web
+2025-02-14 01:24:22,920 - src.config - DEBUG - Label encoded column: card_on_dark_web
+2025-02-14 01:24:22,920 - src.config - DEBUG - Label encoding column: gender
+2025-02-14 01:24:24,215 - src.config - DEBUG - Label encoded column: gender
+2025-02-14 01:24:24,278 - src.config - DEBUG - Common processing completed. Shape: (13305915, 44)
+2025-02-14 01:24:26,081 - src.config - DEBUG - Data merged successfully. Final shape: (13305915, 44)
+2025-02-14 01:25:16,698 - src.config - INFO - Processed dataframe for supervised learning. Shape: (8914963, 36)
+2025-02-14 01:26:04,478 - src.config - INFO - Processed dataframe for unsupervised learning. Shape: (13305915, 41)
+2025-02-14 01:26:14,106 - src.config - DEBUG - CustomerSegmentation initialized with 5 clusters and features: ['amount', 'use_chip', 'merchant_city', 'merchant_state', 'mcc', 'errors', 'card_brand', 'card_type', 'credit_limit', 'year_pin_last_changed', 'card_on_dark_web', 'current_age', 'retirement_age', 'per_capita_income', 'yearly_income', 'total_debt', 'credit_score', 'num_credit_cards', 'transaction_hour', 'transaction_day', 'transaction_month', 'transaction_year', 'transaction_weekday', 'transaction_quarter', 'day_of_year', 'week_of_year', 'expires_month', 'expires_year']
+2025-02-14 01:26:14,126 - src.config - INFO - Tuning customer segmentation model using inertia metric.
+2025-02-14 01:26:28,879 - src.config - ERROR - Error tuning customer segmentation: The 'max_iter' parameter of KMeans must be an int in the range [1, inf). Got [300] instead.
+Traceback (most recent call last):
+  File "/Users/sathyanarayanan/Desktop/github/Financial Transactions/src/../src/customer_segmentation.py", line 106, in tune
+    kmeans.fit(X_scaled)
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/base.py", line 1466, in wrapper
+    estimator._validate_params()
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/base.py", line 666, in _validate_params
+    validate_parameter_constraints(
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/utils/_param_validation.py", line 95, in validate_parameter_constraints
+    raise InvalidParameterError(
+sklearn.utils._param_validation.InvalidParameterError: The 'max_iter' parameter of KMeans must be an int in the range [1, inf). Got [300] instead.
+2025-02-14 01:26:28,927 - src.config - ERROR - An error occurred in the main pipeline: The 'max_iter' parameter of KMeans must be an int in the range [1, inf). Got [300] instead.
+Traceback (most recent call last):
+  File "<ipython-input-1-0f074526265d>", line 105, in main
+    best_k = segmentation.tune(segmentation_features)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sathyanarayanan/Desktop/github/Financial Transactions/src/../src/customer_segmentation.py", line 106, in tune
+    kmeans.fit(X_scaled)
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/base.py", line 1466, in wrapper
+    estimator._validate_params()
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/base.py", line 666, in _validate_params
+    validate_parameter_constraints(
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/utils/_param_validation.py", line 95, in validate_parameter_constraints
+    raise InvalidParameterError(
+sklearn.utils._param_validation.InvalidParameterError: The 'max_iter' parameter of KMeans must be an int in the range [1, inf). Got [300] instead.
+2025-02-14 01:28:47,617 - matplotlib - DEBUG - matplotlib data path: /opt/homebrew/lib/python3.11/site-packages/matplotlib/mpl-data
+2025-02-14 01:28:47,620 - matplotlib - DEBUG - CONFIGDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-14 01:28:47,651 - matplotlib - DEBUG - interactive is False
+2025-02-14 01:28:47,651 - matplotlib - DEBUG - platform is darwin
+2025-02-14 01:28:47,677 - matplotlib - DEBUG - CACHEDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-14 01:28:47,679 - matplotlib.font_manager - DEBUG - Using fontManager instance from /Users/sathyanarayanan/.matplotlib/fontlist-v390.json
+2025-02-14 01:28:47,873 - src.config - INFO - Starting main pipeline execution.
+2025-02-14 01:28:47,873 - src.config - DEBUG - DataLoader initialized with file paths.
+2025-02-14 01:28:47,873 - src.config - INFO - Loading transactions from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/transactions_data.csv
+2025-02-14 01:29:00,351 - src.config - DEBUG - Transactions loaded with shape (13305915, 12)
+2025-02-14 01:29:00,353 - src.config - INFO - Loading cards from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/cards_data.csv
+2025-02-14 01:29:00,364 - src.config - DEBUG - Cards loaded with shape (6146, 13)
+2025-02-14 01:29:00,365 - src.config - INFO - Loading users from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/users_data.csv
+2025-02-14 01:29:00,369 - src.config - DEBUG - Users loaded with shape (2000, 14)
+2025-02-14 01:29:00,370 - src.config - INFO - Loading fraud labels from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/train_fraud_labels.json
+2025-02-14 01:29:06,162 - src.config - DEBUG - Fraud labels loaded with shape (8914963, 2)
+2025-02-14 01:29:06,261 - src.config - DEBUG - Preprocessor initialized.
+2025-02-14 01:29:06,261 - src.config - INFO - Preprocessing transactions.
+2025-02-14 01:29:15,342 - src.config - DEBUG - Transactions preprocessed. Shape: (13305915, 12)
+2025-02-14 01:29:15,402 - src.config - INFO - Preprocessing cards.
+2025-02-14 01:29:15,405 - src.config - DEBUG - Cards preprocessed. Shape: (6146, 13)
+2025-02-14 01:29:15,444 - src.config - INFO - Merging datasets.
+2025-02-14 01:32:12,314 - src.config - INFO - Performing common processing on dataframe.
+2025-02-14 01:32:12,388 - src.config - DEBUG - Processing 'date' column.
+2025-02-14 01:32:15,791 - src.config - DEBUG - Processed 'date' column.
+2025-02-14 01:32:15,793 - src.config - DEBUG - Processing 'expires' column.
+2025-02-14 01:32:48,452 - src.config - DEBUG - Processed 'expires' column.
+2025-02-14 01:33:08,153 - src.config - DEBUG - Dropped columns: ['date', 'acct_open_date', 'expires', 'card_number', 'cvv', 'transaction_id']
+2025-02-14 01:33:20,294 - src.config - DEBUG - Processing monetary column: amount
+2025-02-14 01:33:34,572 - src.config - DEBUG - Processed monetary column: amount
+2025-02-14 01:33:34,574 - src.config - DEBUG - Processing monetary column: per_capita_income
+2025-02-14 01:33:43,673 - src.config - DEBUG - Processed monetary column: per_capita_income
+2025-02-14 01:33:43,675 - src.config - DEBUG - Processing monetary column: yearly_income
+2025-02-14 01:33:54,560 - src.config - DEBUG - Processed monetary column: yearly_income
+2025-02-14 01:33:54,564 - src.config - DEBUG - Processing monetary column: total_debt
+2025-02-14 01:34:04,519 - src.config - DEBUG - Processed monetary column: total_debt
+2025-02-14 01:34:04,521 - src.config - DEBUG - Processing monetary column: credit_limit
+2025-02-14 01:34:13,662 - src.config - DEBUG - Processed monetary column: credit_limit
+2025-02-14 01:34:13,863 - src.config - DEBUG - Label encoding column: use_chip
+2025-02-14 01:34:15,297 - src.config - DEBUG - Label encoded column: use_chip
+2025-02-14 01:34:15,297 - src.config - DEBUG - Label encoding column: merchant_city
+2025-02-14 01:34:17,350 - src.config - DEBUG - Label encoded column: merchant_city
+2025-02-14 01:34:17,351 - src.config - DEBUG - Label encoding column: merchant_state
+2025-02-14 01:34:18,651 - src.config - DEBUG - Label encoded column: merchant_state
+2025-02-14 01:34:18,651 - src.config - DEBUG - Label encoding column: errors
+2025-02-14 01:34:19,790 - src.config - DEBUG - Label encoded column: errors
+2025-02-14 01:34:19,791 - src.config - DEBUG - Label encoding column: card_brand
+2025-02-14 01:34:21,033 - src.config - DEBUG - Label encoded column: card_brand
+2025-02-14 01:34:21,033 - src.config - DEBUG - Label encoding column: card_type
+2025-02-14 01:34:22,197 - src.config - DEBUG - Label encoded column: card_type
+2025-02-14 01:34:22,197 - src.config - DEBUG - Label encoding column: has_chip
+2025-02-14 01:34:23,360 - src.config - DEBUG - Label encoded column: has_chip
+2025-02-14 01:34:23,360 - src.config - DEBUG - Label encoding column: card_on_dark_web
+2025-02-14 01:34:24,736 - src.config - DEBUG - Label encoded column: card_on_dark_web
+2025-02-14 01:34:24,737 - src.config - DEBUG - Label encoding column: gender
+2025-02-14 01:34:26,018 - src.config - DEBUG - Label encoded column: gender
+2025-02-14 01:34:26,071 - src.config - DEBUG - Common processing completed. Shape: (13305915, 44)
+2025-02-14 01:34:27,909 - src.config - DEBUG - Data merged successfully. Final shape: (13305915, 44)
+2025-02-14 01:35:06,706 - src.config - INFO - Processed dataframe for unsupervised learning. Shape: (13305915, 41)
+2025-02-14 01:35:06,985 - src.config - INFO - Starting advanced CLV computation using RFM metrics.
+2025-02-14 01:35:07,224 - src.config - ERROR - An error occurred in the main pipeline: to assemble mappings requires at least that [year, month, day] be specified: [day,month,year] is missing
+Traceback (most recent call last):
+  File "<ipython-input-1-fb26240e9265>", line 100, in main
+    rfm = compute_rfm_metrics(df_unsupervised)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sathyanarayanan/Desktop/github/Financial Transactions/src/../src/utils.py", line 10, in compute_rfm_metrics
+    df['transaction_date'] = pd.to_datetime(df[['transaction_year', 'transaction_month', 'transaction_day']])
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/pandas/core/tools/datetimes.py", line 1070, in to_datetime
+    result = _assemble_from_unit_mappings(arg, errors, utc)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/pandas/core/tools/datetimes.py", line 1186, in _assemble_from_unit_mappings
+    raise ValueError(
+ValueError: to assemble mappings requires at least that [year, month, day] be specified: [day,month,year] is missing
+2025-02-14 01:38:32,864 - matplotlib - DEBUG - matplotlib data path: /opt/homebrew/lib/python3.11/site-packages/matplotlib/mpl-data
+2025-02-14 01:38:32,868 - matplotlib - DEBUG - CONFIGDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-14 01:38:32,900 - matplotlib - DEBUG - interactive is False
+2025-02-14 01:38:32,900 - matplotlib - DEBUG - platform is darwin
+2025-02-14 01:38:32,929 - matplotlib - DEBUG - CACHEDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-14 01:38:32,931 - matplotlib.font_manager - DEBUG - Using fontManager instance from /Users/sathyanarayanan/.matplotlib/fontlist-v390.json
+2025-02-14 01:38:33,121 - src.config - INFO - Starting main pipeline execution.
+2025-02-14 01:38:33,122 - src.config - DEBUG - DataLoader initialized with file paths.
+2025-02-14 01:38:33,122 - src.config - INFO - Loading transactions from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/transactions_data.csv
+2025-02-14 01:38:45,486 - src.config - DEBUG - Transactions loaded with shape (13305915, 12)
+2025-02-14 01:38:45,489 - src.config - INFO - Loading cards from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/cards_data.csv
+2025-02-14 01:38:45,499 - src.config - DEBUG - Cards loaded with shape (6146, 13)
+2025-02-14 01:38:45,499 - src.config - INFO - Loading users from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/users_data.csv
+2025-02-14 01:38:45,503 - src.config - DEBUG - Users loaded with shape (2000, 14)
+2025-02-14 01:38:45,504 - src.config - INFO - Loading fraud labels from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/train_fraud_labels.json
+2025-02-14 01:38:53,445 - src.config - DEBUG - Fraud labels loaded with shape (8914963, 2)
+2025-02-14 01:38:53,583 - src.config - DEBUG - Preprocessor initialized.
+2025-02-14 01:38:53,583 - src.config - INFO - Preprocessing transactions.
+2025-02-14 01:39:02,487 - src.config - DEBUG - Transactions preprocessed. Shape: (13305915, 12)
+2025-02-14 01:39:02,546 - src.config - INFO - Preprocessing cards.
+2025-02-14 01:39:02,549 - src.config - DEBUG - Cards preprocessed. Shape: (6146, 13)
+2025-02-14 01:39:02,586 - src.config - INFO - Merging datasets.
+2025-02-14 01:43:16,138 - src.config - INFO - Performing common processing on dataframe.
+2025-02-14 01:43:16,169 - src.config - DEBUG - Processing 'date' column.
+2025-02-14 01:43:19,509 - src.config - DEBUG - Processed 'date' column.
+2025-02-14 01:43:19,510 - src.config - DEBUG - Processing 'expires' column.
+2025-02-14 01:43:54,013 - src.config - DEBUG - Processed 'expires' column.
+2025-02-14 01:44:24,525 - src.config - DEBUG - Dropped columns: ['date', 'acct_open_date', 'expires', 'card_number', 'cvv', 'transaction_id']
+2025-02-14 01:44:39,467 - src.config - DEBUG - Processing monetary column: amount
+2025-02-14 01:44:53,640 - src.config - DEBUG - Processed monetary column: amount
+2025-02-14 01:44:53,643 - src.config - DEBUG - Processing monetary column: per_capita_income
+2025-02-14 01:45:02,694 - src.config - DEBUG - Processed monetary column: per_capita_income
+2025-02-14 01:45:02,697 - src.config - DEBUG - Processing monetary column: yearly_income
+2025-02-14 01:45:12,416 - src.config - DEBUG - Processed monetary column: yearly_income
+2025-02-14 01:45:12,419 - src.config - DEBUG - Processing monetary column: total_debt
+2025-02-14 01:45:21,825 - src.config - DEBUG - Processed monetary column: total_debt
+2025-02-14 01:45:21,828 - src.config - DEBUG - Processing monetary column: credit_limit
+2025-02-14 01:45:31,878 - src.config - DEBUG - Processed monetary column: credit_limit
+2025-02-14 01:45:32,116 - src.config - DEBUG - Label encoding column: use_chip
+2025-02-14 01:45:33,474 - src.config - DEBUG - Label encoded column: use_chip
+2025-02-14 01:45:33,474 - src.config - DEBUG - Label encoding column: merchant_city
+2025-02-14 01:45:35,626 - src.config - DEBUG - Label encoded column: merchant_city
+2025-02-14 01:45:35,628 - src.config - DEBUG - Label encoding column: merchant_state
+2025-02-14 01:45:36,914 - src.config - DEBUG - Label encoded column: merchant_state
+2025-02-14 01:45:36,914 - src.config - DEBUG - Label encoding column: errors
+2025-02-14 01:45:38,244 - src.config - DEBUG - Label encoded column: errors
+2025-02-14 01:45:38,245 - src.config - DEBUG - Label encoding column: card_brand
+2025-02-14 01:45:39,403 - src.config - DEBUG - Label encoded column: card_brand
+2025-02-14 01:45:39,403 - src.config - DEBUG - Label encoding column: card_type
+2025-02-14 01:45:40,765 - src.config - DEBUG - Label encoded column: card_type
+2025-02-14 01:45:40,765 - src.config - DEBUG - Label encoding column: has_chip
+2025-02-14 01:45:41,962 - src.config - DEBUG - Label encoded column: has_chip
+2025-02-14 01:45:41,962 - src.config - DEBUG - Label encoding column: card_on_dark_web
+2025-02-14 01:45:43,165 - src.config - DEBUG - Label encoded column: card_on_dark_web
+2025-02-14 01:45:43,166 - src.config - DEBUG - Label encoding column: gender
+2025-02-14 01:45:44,415 - src.config - DEBUG - Label encoded column: gender
+2025-02-14 01:45:44,470 - src.config - DEBUG - Common processing completed. Shape: (13305915, 44)
+2025-02-14 01:45:46,441 - src.config - DEBUG - Data merged successfully. Final shape: (13305915, 44)
+2025-02-14 01:46:38,965 - src.config - INFO - Processed dataframe for unsupervised learning. Shape: (13305915, 41)
+2025-02-14 01:46:55,157 - src.config - DEBUG - FraudDetectionModel initialized.
+2025-02-14 01:46:55,160 - src.config - INFO - Training unsupervised fraud detection model (Isolation Forest).
+2025-02-14 01:49:09,920 - src.config - DEBUG - CustomerSegmentation initialized with 5 clusters and features: ['amount', 'use_chip', 'merchant_city', 'merchant_state', 'mcc', 'errors', 'card_brand', 'card_type', 'credit_limit', 'year_pin_last_changed', 'card_on_dark_web', 'current_age', 'retirement_age', 'per_capita_income', 'yearly_income', 'total_debt', 'credit_score', 'num_credit_cards', 'transaction_hour', 'transaction_day', 'transaction_month', 'transaction_year', 'transaction_weekday', 'transaction_quarter', 'day_of_year', 'week_of_year', 'expires_month', 'expires_year']
+2025-02-14 01:49:09,931 - src.config - INFO - Tuning customer segmentation model using inertia metric.
+2025-02-14 01:49:26,387 - src.config - ERROR - Error tuning customer segmentation: The 'n_init' parameter of KMeans must be a str among {'auto'} or an int in the range [1, inf). Got [10, 20, 30] instead.
+Traceback (most recent call last):
+  File "/Users/sathyanarayanan/Desktop/github/Financial Transactions/notebooks/../src/customer_segmentation.py", line 106, in tune
+    kmeans.fit(X_scaled)
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/base.py", line 1466, in wrapper
+    estimator._validate_params()
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/base.py", line 666, in _validate_params
+    validate_parameter_constraints(
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/utils/_param_validation.py", line 95, in validate_parameter_constraints
+    raise InvalidParameterError(
+sklearn.utils._param_validation.InvalidParameterError: The 'n_init' parameter of KMeans must be a str among {'auto'} or an int in the range [1, inf). Got [10, 20, 30] instead.
+2025-02-14 01:51:13,634 - src.config - DEBUG - CustomerSegmentation initialized with 5 clusters and features: ['amount', 'use_chip', 'merchant_city', 'merchant_state', 'mcc', 'errors', 'card_brand', 'card_type', 'credit_limit', 'year_pin_last_changed', 'card_on_dark_web', 'current_age', 'retirement_age', 'per_capita_income', 'yearly_income', 'total_debt', 'credit_score', 'num_credit_cards', 'transaction_hour', 'transaction_day', 'transaction_month', 'transaction_year', 'transaction_weekday', 'transaction_quarter', 'day_of_year', 'week_of_year', 'expires_month', 'expires_year']
+2025-02-14 01:51:13,637 - src.config - INFO - Tuning customer segmentation model using inertia metric.
+2025-02-14 01:51:29,825 - src.config - ERROR - Error tuning customer segmentation: The 'n_init' parameter of KMeans must be a str among {'auto'} or an int in the range [1, inf). Got [10, 20, 30] instead.
+Traceback (most recent call last):
+  File "/Users/sathyanarayanan/Desktop/github/Financial Transactions/notebooks/../src/customer_segmentation.py", line 106, in tune
+    kmeans.fit(X_scaled)
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/base.py", line 1466, in wrapper
+    estimator._validate_params()
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/base.py", line 666, in _validate_params
+    validate_parameter_constraints(
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/utils/_param_validation.py", line 95, in validate_parameter_constraints
+    raise InvalidParameterError(
+sklearn.utils._param_validation.InvalidParameterError: The 'n_init' parameter of KMeans must be a str among {'auto'} or an int in the range [1, inf). Got [10, 20, 30] instead.
+2025-02-14 01:53:11,339 - src.config - DEBUG - CustomerSegmentation initialized with 5 clusters and features: ['amount', 'use_chip', 'merchant_city', 'merchant_state', 'mcc', 'errors', 'card_brand', 'card_type', 'credit_limit', 'year_pin_last_changed', 'card_on_dark_web', 'current_age', 'retirement_age', 'per_capita_income', 'yearly_income', 'total_debt', 'credit_score', 'num_credit_cards', 'transaction_hour', 'transaction_day', 'transaction_month', 'transaction_year', 'transaction_weekday', 'transaction_quarter', 'day_of_year', 'week_of_year', 'expires_month', 'expires_year']
+2025-02-14 01:53:11,342 - src.config - INFO - Tuning customer segmentation model using inertia metric.
+2025-02-14 01:55:44,709 - matplotlib - DEBUG - matplotlib data path: /opt/homebrew/lib/python3.11/site-packages/matplotlib/mpl-data
+2025-02-14 01:55:44,712 - matplotlib - DEBUG - CONFIGDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-14 01:55:44,794 - matplotlib - DEBUG - interactive is False
+2025-02-14 01:55:44,794 - matplotlib - DEBUG - platform is darwin
+2025-02-14 01:55:44,821 - matplotlib - DEBUG - CACHEDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-14 01:55:44,823 - matplotlib.font_manager - DEBUG - Using fontManager instance from /Users/sathyanarayanan/.matplotlib/fontlist-v390.json
+2025-02-14 01:55:44,984 - src.config - INFO - Starting main pipeline execution.
+2025-02-14 01:55:44,984 - src.config - DEBUG - DataLoader initialized with file paths.
+2025-02-14 01:55:44,984 - src.config - INFO - Loading transactions from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/transactions_data.csv
+2025-02-14 01:55:57,219 - src.config - DEBUG - Transactions loaded with shape (13305915, 12)
+2025-02-14 01:55:57,222 - src.config - INFO - Loading cards from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/cards_data.csv
+2025-02-14 01:55:57,233 - src.config - DEBUG - Cards loaded with shape (6146, 13)
+2025-02-14 01:55:57,234 - src.config - INFO - Loading users from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/users_data.csv
+2025-02-14 01:55:57,238 - src.config - DEBUG - Users loaded with shape (2000, 14)
+2025-02-14 01:55:57,239 - src.config - INFO - Loading fraud labels from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/train_fraud_labels.json
+2025-02-14 01:56:03,148 - src.config - DEBUG - Fraud labels loaded with shape (8914963, 2)
+2025-02-14 01:56:03,195 - src.config - DEBUG - Preprocessor initialized.
+2025-02-14 01:56:03,196 - src.config - INFO - Preprocessing transactions.
+2025-02-14 01:56:11,787 - src.config - DEBUG - Transactions preprocessed. Shape: (13305915, 12)
+2025-02-14 01:56:11,923 - src.config - INFO - Preprocessing cards.
+2025-02-14 01:56:11,928 - src.config - DEBUG - Cards preprocessed. Shape: (6146, 13)
+2025-02-14 01:56:11,974 - src.config - INFO - Merging datasets.
+2025-02-14 02:00:26,257 - src.config - INFO - Performing common processing on dataframe.
+2025-02-14 02:00:26,298 - src.config - DEBUG - Processing 'date' column.
+2025-02-14 02:00:29,606 - src.config - DEBUG - Processed 'date' column.
+2025-02-14 02:00:29,606 - src.config - DEBUG - Processing 'expires' column.
+2025-02-14 02:01:02,449 - src.config - DEBUG - Processed 'expires' column.
+2025-02-14 02:01:22,238 - src.config - DEBUG - Dropped columns: ['date', 'acct_open_date', 'expires', 'card_number', 'cvv', 'transaction_id']
+2025-02-14 02:01:34,179 - src.config - DEBUG - Processing monetary column: amount
+2025-02-14 02:01:47,759 - src.config - DEBUG - Processed monetary column: amount
+2025-02-14 02:01:47,762 - src.config - DEBUG - Processing monetary column: per_capita_income
+2025-02-14 02:01:56,702 - src.config - DEBUG - Processed monetary column: per_capita_income
+2025-02-14 02:01:56,704 - src.config - DEBUG - Processing monetary column: yearly_income
+2025-02-14 02:02:05,740 - src.config - DEBUG - Processed monetary column: yearly_income
+2025-02-14 02:02:05,742 - src.config - DEBUG - Processing monetary column: total_debt
+2025-02-14 02:02:14,748 - src.config - DEBUG - Processed monetary column: total_debt
+2025-02-14 02:02:14,751 - src.config - DEBUG - Processing monetary column: credit_limit
+2025-02-14 02:02:24,045 - src.config - DEBUG - Processed monetary column: credit_limit
+2025-02-14 02:02:24,140 - src.config - DEBUG - Label encoding column: use_chip
+2025-02-14 02:02:25,546 - src.config - DEBUG - Label encoded column: use_chip
+2025-02-14 02:02:25,546 - src.config - DEBUG - Label encoding column: merchant_city
+2025-02-14 02:02:27,995 - src.config - DEBUG - Label encoded column: merchant_city
+2025-02-14 02:02:27,997 - src.config - DEBUG - Label encoding column: merchant_state
+2025-02-14 02:02:29,425 - src.config - DEBUG - Label encoded column: merchant_state
+2025-02-14 02:02:29,426 - src.config - DEBUG - Label encoding column: errors
+2025-02-14 02:02:30,527 - src.config - DEBUG - Label encoded column: errors
+2025-02-14 02:02:30,528 - src.config - DEBUG - Label encoding column: card_brand
+2025-02-14 02:02:31,637 - src.config - DEBUG - Label encoded column: card_brand
+2025-02-14 02:02:31,637 - src.config - DEBUG - Label encoding column: card_type
+2025-02-14 02:02:32,794 - src.config - DEBUG - Label encoded column: card_type
+2025-02-14 02:02:32,796 - src.config - DEBUG - Label encoding column: has_chip
+2025-02-14 02:02:33,928 - src.config - DEBUG - Label encoded column: has_chip
+2025-02-14 02:02:33,929 - src.config - DEBUG - Label encoding column: card_on_dark_web
+2025-02-14 02:02:35,040 - src.config - DEBUG - Label encoded column: card_on_dark_web
+2025-02-14 02:02:35,040 - src.config - DEBUG - Label encoding column: gender
+2025-02-14 02:02:36,269 - src.config - DEBUG - Label encoded column: gender
+2025-02-14 02:02:36,325 - src.config - DEBUG - Common processing completed. Shape: (13305915, 44)
+2025-02-14 02:02:38,099 - src.config - DEBUG - Data merged successfully. Final shape: (13305915, 44)
+2025-02-14 02:03:18,747 - src.config - INFO - Processed dataframe for unsupervised learning. Shape: (13305915, 41)
+2025-02-14 02:04:31,450 - src.config - INFO - Starting advanced CLV computation using RFM metrics.
+2025-02-14 02:04:55,071 - src.config - DEBUG - Computed RFM metrics (first 5 rows):
+  client_id  recency  frequency    monetary
+0         0        0      12795   625799.67
+1         1        0      10073   336187.37
+2       100        0       7070   406748.36
+3      1002       35       3724   199185.10
+4      1003        0      10830  1004970.67
+2025-02-14 02:04:55,076 - src.config - DEBUG - RFM metrics with advanced CLV computed (first 5 rows):
+  client_id  recency  frequency    monetary           clv
+0         0        0      12795   625799.67  8.007107e+09
+1         1        0      10073   336187.37  3.386415e+09
+2       100        0       7070   406748.36  2.875711e+09
+3      1002       35       3724   199185.10  2.060459e+07
+4      1003        0      10830  1004970.67  1.088383e+10
+2025-02-14 02:04:55,796 - src.config - DEBUG - Customer info aggregated (first 5 rows):
+  client_id  current_age  per_capita_income
+0         0           33            29237.0
+1         1           43            22247.0
+2       100           56            24005.0
+3      1002           31            19023.0
+4      1003           51            39495.0
+2025-02-14 02:04:55,802 - src.config - DEBUG - Merged RFM with customer info (first 5 rows):
+  client_id  recency  frequency    monetary           clv  current_age  per_capita_income
+0         0        0      12795   625799.67  8.007107e+09           33            29237.0
+1         1        0      10073   336187.37  3.386415e+09           43            22247.0
+2       100        0       7070   406748.36  2.875711e+09           56            24005.0
+3      1002       35       3724   199185.10  2.060459e+07           31            19023.0
+4      1003        0      10830  1004970.67  1.088383e+10           51            39495.0
+2025-02-14 02:04:55,802 - src.config - INFO - RFM DataFrame shape after merging: (1219, 7)
+2025-02-14 02:04:55,804 - src.config - INFO - CLV feature set shape: (1219, 5)
+2025-02-14 02:04:55,805 - src.config - DEBUG - CLV features sample:
+   recency  frequency    monetary  current_age  per_capita_income
+0        0      12795   625799.67           33            29237.0
+1        0      10073   336187.37           43            22247.0
+2        0       7070   406748.36           56            24005.0
+3       35       3724   199185.10           31            19023.0
+4        0      10830  1004970.67           51            39495.0
+2025-02-14 02:04:55,805 - src.config - INFO - CLV target sample (first 5 values): [8007106777.650001, 3386415378.0099998, 2875710905.2, 20604592.01111111, 10883832356.1]
+2025-02-14 02:04:55,808 - src.config - DEBUG - CLVPrediction pipeline initialized with StandardScaler and Ridge Regression.
+2025-02-14 02:04:55,809 - src.config - INFO - Training advanced CLV prediction model using Ridge Regression.
+2025-02-14 02:04:59,903 - src.config - INFO - Ridge Regression tuning completed in 4.08 seconds.
+2025-02-14 02:04:59,904 - src.config - DEBUG - Best hyperparameters: {'ridge__solver': 'svd', 'ridge__alpha': 100.0}
+2025-02-14 02:04:59,906 - src.config - INFO - Advanced CLV Prediction MAE on validation set: 1370734148.32
+2025-02-14 02:04:59,908 - src.config - INFO - Advanced CLV Prediction MAE: 1370734148.32
+2025-02-14 02:04:59,908 - src.config - INFO - Saving advanced CLV prediction pipeline.
+2025-02-14 02:04:59,912 - src.config - DEBUG - Advanced CLV prediction pipeline saved in /Users/sathyanarayanan/Desktop/github/Financial Transactions/models
+2025-02-14 02:11:38,860 - src.config - INFO - Starting advanced CLV computation using RFM metrics.
+2025-02-14 02:12:03,510 - src.config - DEBUG - Computed RFM metrics (first 5 rows):
+  client_id  recency  frequency    monetary
+0         0        0      12795   625799.67
+1         1        0      10073   336187.37
+2       100        0       7070   406748.36
+3      1002       35       3724   199185.10
+4      1003        0      10830  1004970.67
+2025-02-14 02:12:03,516 - src.config - DEBUG - RFM metrics with advanced CLV computed (first 5 rows):
+  client_id  recency  frequency    monetary           clv
+0         0        0      12795   625799.67  8.007107e+09
+1         1        0      10073   336187.37  3.386415e+09
+2       100        0       7070   406748.36  2.875711e+09
+3      1002       35       3724   199185.10  2.060459e+07
+4      1003        0      10830  1004970.67  1.088383e+10
+2025-02-14 02:12:03,517 - src.config - INFO - Average CLV: 6173888834.97
+2025-02-14 02:12:04,299 - src.config - DEBUG - Customer info aggregated (first 5 rows):
+  client_id  current_age  per_capita_income
+0         0           33            29237.0
+1         1           43            22247.0
+2       100           56            24005.0
+3      1002           31            19023.0
+4      1003           51            39495.0
+2025-02-14 02:12:04,303 - src.config - DEBUG - Merged RFM with customer info (first 5 rows):
+  client_id  recency  frequency    monetary           clv  current_age  per_capita_income
+0         0        0      12795   625799.67  8.007107e+09           33            29237.0
+1         1        0      10073   336187.37  3.386415e+09           43            22247.0
+2       100        0       7070   406748.36  2.875711e+09           56            24005.0
+3      1002       35       3724   199185.10  2.060459e+07           31            19023.0
+4      1003        0      10830  1004970.67  1.088383e+10           51            39495.0
+2025-02-14 02:12:04,304 - src.config - INFO - RFM DataFrame shape after merging: (1219, 7)
+2025-02-14 02:12:04,307 - src.config - INFO - CLV feature set shape: (1219, 5)
+2025-02-14 02:12:04,308 - src.config - DEBUG - CLV features sample:
+   recency  frequency    monetary  current_age  per_capita_income
+0        0      12795   625799.67           33            29237.0
+1        0      10073   336187.37           43            22247.0
+2        0       7070   406748.36           56            24005.0
+3       35       3724   199185.10           31            19023.0
+4        0      10830  1004970.67           51            39495.0
+2025-02-14 02:12:04,309 - src.config - INFO - CLV target sample (first 5 values): [8007106777.650001, 3386415378.0099998, 2875710905.2, 20604592.01111111, 10883832356.1]
+2025-02-14 02:12:04,313 - src.config - DEBUG - CLVPrediction pipeline initialized with StandardScaler and Ridge Regression.
+2025-02-14 02:12:04,314 - src.config - INFO - Training advanced CLV prediction model using Ridge Regression.
+2025-02-14 02:12:07,820 - src.config - INFO - Ridge Regression tuning completed in 3.47 seconds.
+2025-02-14 02:12:07,822 - src.config - DEBUG - Best hyperparameters: {'ridge__solver': 'svd', 'ridge__alpha': 100.0}
+2025-02-14 02:12:07,823 - src.config - INFO - Advanced CLV Prediction MAE on validation set: 1370734148.32
+2025-02-14 02:12:07,824 - src.config - INFO - Advanced CLV Prediction MAE: 1370734148.32
+2025-02-14 02:12:07,825 - src.config - INFO - Saving advanced CLV prediction pipeline.
+2025-02-14 02:12:07,827 - src.config - DEBUG - Advanced CLV prediction pipeline saved in /Users/sathyanarayanan/Desktop/github/Financial Transactions/models
+2025-02-14 02:14:46,583 - src.config - INFO - Starting advanced CLV computation using RFM metrics.
+2025-02-14 02:15:16,221 - src.config - DEBUG - Computed RFM metrics (first 5 rows):
+  client_id  recency  frequency    monetary
+0         0        0      12795   625799.67
+1         1        0      10073   336187.37
+2       100        0       7070   406748.36
+3      1002       35       3724   199185.10
+4      1003        0      10830  1004970.67
+2025-02-14 02:15:16,231 - src.config - DEBUG - RFM metrics with advanced CLV computed (first 5 rows):
+  client_id  recency  frequency    monetary           clv
+0         0        0      12795   625799.67  8.007107e+09
+1         1        0      10073   336187.37  3.386415e+09
+2       100        0       7070   406748.36  2.875711e+09
+3      1002       35       3724   199185.10  2.060459e+07
+4      1003        0      10830  1004970.67  1.088383e+10
+2025-02-14 02:15:16,232 - src.config - INFO - Average CLV: 6173888834.97
+2025-02-14 02:15:17,011 - src.config - DEBUG - Customer info aggregated (first 5 rows):
+  client_id  current_age  per_capita_income
+0         0           33            29237.0
+1         1           43            22247.0
+2       100           56            24005.0
+3      1002           31            19023.0
+4      1003           51            39495.0
+2025-02-14 02:15:17,017 - src.config - DEBUG - Merged RFM with customer info (first 5 rows):
+  client_id  recency  frequency    monetary           clv  current_age  per_capita_income
+0         0        0      12795   625799.67  8.007107e+09           33            29237.0
+1         1        0      10073   336187.37  3.386415e+09           43            22247.0
+2       100        0       7070   406748.36  2.875711e+09           56            24005.0
+3      1002       35       3724   199185.10  2.060459e+07           31            19023.0
+4      1003        0      10830  1004970.67  1.088383e+10           51            39495.0
+2025-02-14 02:15:17,017 - src.config - INFO - RFM DataFrame shape after merging: (1219, 7)
+2025-02-14 02:15:17,018 - src.config - INFO - CLV feature set shape: (1219, 5)
+2025-02-14 02:15:17,019 - src.config - DEBUG - CLV features sample:
+   recency  frequency    monetary  current_age  per_capita_income
+0        0      12795   625799.67           33            29237.0
+1        0      10073   336187.37           43            22247.0
+2        0       7070   406748.36           56            24005.0
+3       35       3724   199185.10           31            19023.0
+4        0      10830  1004970.67           51            39495.0
+2025-02-14 02:15:17,020 - src.config - INFO - CLV target sample (first 5 values): [8007106777.650001, 3386415378.0099998, 2875710905.2, 20604592.01111111, 10883832356.1]
+2025-02-14 02:15:17,023 - src.config - DEBUG - CLVPrediction pipeline initialized with StandardScaler and Ridge Regression.
+2025-02-14 02:15:17,024 - src.config - INFO - Training advanced CLV prediction model using Ridge Regression.
+2025-02-14 02:15:17,418 - src.config - INFO - Ridge Regression tuning completed in 0.38 seconds.
+2025-02-14 02:15:17,418 - src.config - DEBUG - Best hyperparameters: {'ridge__solver': 'svd', 'ridge__alpha': 100.0}
+2025-02-14 02:15:17,419 - src.config - INFO - Advanced CLV Prediction MAE on validation set: 1370734148.32
+2025-02-14 02:15:17,420 - src.config - INFO - Ridge-based Advanced CLV Prediction MAE: 1370734148.32
+2025-02-14 02:15:17,420 - src.config - INFO - Saving advanced CLV prediction pipeline.
+2025-02-14 02:15:17,423 - src.config - DEBUG - Advanced CLV prediction pipeline saved in /Users/sathyanarayanan/Desktop/github/Financial Transactions/models
+2025-02-14 02:15:17,424 - src.config - DEBUG - CLVPredictionGB pipeline initialized with StandardScaler and GradientBoostingRegressor.
+2025-02-14 02:15:17,425 - src.config - INFO - Training advanced CLV prediction model using Gradient Boosting with log transformation.
+2025-02-14 02:15:21,869 - src.config - INFO - Gradient Boosting tuning completed in 4.44 seconds.
+2025-02-14 02:15:21,870 - src.config - DEBUG - Best hyperparameters: {'gb__n_estimators': 300, 'gb__max_depth': 3, 'gb__learning_rate': 0.05}
+2025-02-14 02:15:21,873 - src.config - INFO - Advanced CLV Prediction MAE on validation set: 220175416.41
+2025-02-14 02:15:21,873 - src.config - INFO - MAPE on validation set: 4.81%
+2025-02-14 02:15:21,874 - src.config - INFO - Gradient Boosting Advanced CLV Prediction MAE: 220175416.41
+2025-02-14 02:15:21,874 - src.config - INFO - Saving advanced CLV prediction pipeline (GB).
+2025-02-14 02:15:21,883 - src.config - DEBUG - Advanced CLV prediction pipeline (GB) saved in /Users/sathyanarayanan/Desktop/github/Financial Transactions/models
+2025-02-14 02:16:57,991 - src.config - DEBUG - CustomerSegmentation initialized with 5 clusters and features: ['amount', 'use_chip', 'merchant_city', 'merchant_state', 'mcc', 'errors', 'card_brand', 'card_type', 'credit_limit', 'year_pin_last_changed', 'card_on_dark_web', 'current_age', 'retirement_age', 'per_capita_income', 'yearly_income', 'total_debt', 'credit_score', 'num_credit_cards', 'transaction_hour', 'transaction_day', 'transaction_month', 'transaction_year', 'transaction_weekday', 'transaction_quarter', 'day_of_year', 'week_of_year', 'expires_month', 'expires_year']
+2025-02-14 02:16:57,993 - src.config - INFO - Tuning customer segmentation model using inertia metric.
+2025-02-14 02:17:19,076 - src.config - ERROR - Error tuning customer segmentation: could not convert string to float: 'k-means++'
+Traceback (most recent call last):
+  File "/Users/sathyanarayanan/Desktop/github/Financial Transactions/notebooks/../src/customer_segmentation.py", line 106, in tune
+    kmeans.fit(X_scaled)
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/cluster/_kmeans.py", line 1483, in fit
+    init = check_array(init, dtype=X.dtype, copy=True, order="C")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/utils/validation.py", line 1012, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/utils/_array_api.py", line 751, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'k-means++'
+2025-02-14 02:22:10,592 - src.config - DEBUG - CustomerSegmentation initialized with 5 clusters and features: ['amount', 'use_chip', 'merchant_city', 'merchant_state', 'mcc', 'errors', 'card_brand', 'card_type', 'credit_limit', 'year_pin_last_changed', 'card_on_dark_web', 'current_age', 'retirement_age', 'per_capita_income', 'yearly_income', 'total_debt', 'credit_score', 'num_credit_cards', 'transaction_hour', 'transaction_day', 'transaction_month', 'transaction_year', 'transaction_weekday', 'transaction_quarter', 'day_of_year', 'week_of_year', 'expires_month', 'expires_year']
+2025-02-14 02:22:10,595 - src.config - INFO - Tuning customer segmentation model using inertia metric.
+2025-02-14 02:23:03,413 - src.config - INFO - KMeans with k=3 has inertia: 302966264.43
+2025-02-14 02:23:49,413 - src.config - INFO - KMeans with k=4 has inertia: 293475841.37
+2025-02-14 02:24:26,337 - src.config - INFO - KMeans with k=5 has inertia: 284617784.63
+2025-02-14 02:25:00,549 - src.config - INFO - KMeans with k=6 has inertia: 279770353.57
+2025-02-14 02:25:34,965 - src.config - INFO - KMeans with k=7 has inertia: 275009613.75
+2025-02-14 02:26:26,963 - src.config - INFO - KMeans with k=9 has inertia: 259583799.29
+2025-02-14 02:27:26,383 - src.config - INFO - KMeans with k=11 has inertia: 252256953.29
+2025-02-14 02:28:08,149 - src.config - INFO - KMeans with k=13 has inertia: 245588617.45
+2025-02-14 02:29:03,789 - src.config - INFO - KMeans with k=15 has inertia: 241131338.23
+2025-02-14 02:29:03,799 - src.config - INFO - Best number of clusters found: 15 with inertia: 241131338.23
+2025-02-14 02:29:43,161 - src.config - INFO - Best number of clusters found: 15
+2025-02-14 02:29:43,178 - src.config - INFO - Predicting customer segments.
+2025-02-14 02:29:55,655 - src.config - DEBUG - Customer segments predicted.
+2025-02-14 02:29:55,868 - src.config - INFO - Interpreting clusters.
+2025-02-14 02:30:13,405 - src.config - INFO - Cluster interpretation completed.
+2025-02-14 02:30:13,415 - src.config - DEBUG - Cluster centroids and counts:
+        amount  use_chip  merchant_city  merchant_state          mcc  \
+0    36.972870  1.332165    6876.303233       95.062187  5366.694264   
+1    37.152329  1.309411    6693.567628       96.206610  5566.197041   
+2    35.427249  1.903835    6484.540394       90.291036  5611.477498   
+3    51.502630  1.159504    7206.046902       97.856534  5496.911508   
+4    37.564076  1.839220    6223.863619      101.307424  5556.000650   
+5    47.433571  1.110534    6827.501494      104.844628  5363.534570   
+6    47.490397  1.148348    6266.761507      107.837474  5558.194342   
+7    37.157578  0.198423    6078.718935      101.941490  5558.035426   
+8    52.559844  1.227028    7290.034101       95.740909  5503.393659   
+9   561.855636  1.190165    6665.049493       98.992661  4765.984544   
+10   35.099464  1.920938    5821.941313      101.340471  5623.112205   
+11   59.789341  1.273228    6518.023901      129.705453  5621.251279   
+12   33.964441  0.173571    6093.380702       97.278845  5644.677848   
+13   35.396348  1.922837    5714.592785      105.813408  5628.961502   
+14   35.503564  0.194690    6010.024238      100.182945  5584.565748   
+
+       errors  card_brand     card_type  credit_limit  year_pin_last_changed  \
+0   20.986108    2.356870  1.075221e+00  11610.714782            2011.462964   
+1   20.980690    2.340910  7.506293e-01  13865.668638            2011.215662   
+2   20.979790    2.329432  7.449572e-01  13244.987598            2010.991098   
+3   20.986721    2.350907  8.233209e-01  32019.647156            2011.229745   
+4   20.977652    2.274941  8.020012e-01  13754.291949            2011.119876   
+5    9.509792    2.292968  9.524979e-01  16431.735198            2011.306023   
+6   20.977754    0.125581 -7.492895e-13  11695.387112            2011.348896   
+7   20.981443    2.386956  7.909883e-01  14043.439516            2011.817965   
+8   20.986848    2.340127  8.135564e-01  33187.351501            2011.184113   
+9   20.998923    2.125411  4.433886e-01  17609.070398            2011.414756   
+10  20.981408    2.391854  8.115851e-01  12802.294162            2010.986315   
+11  20.974828    2.470880  8.358581e-01  64020.256611            2011.830536   
+12  20.979177    2.356672  8.198350e-01  13070.609174            2011.660508   
+13  20.981581    2.384716  7.934278e-01  13293.237672            2011.082158   
+14  20.981029    2.386728  8.202332e-01  13206.805766            2011.732783   
+
+    card_on_dark_web  current_age  retirement_age  per_capita_income  \
+0                0.0    54.644431       62.007944       21518.015864   
+1                0.0    77.370993       67.032399       21608.586121   
+2                0.0    72.054633       66.911341       20861.513146   
+3                0.0    50.268904       66.527955       40874.193329   
+4                0.0    53.194446       66.306056       22098.749628   
+5                0.0    54.143325       66.409725       23939.729280   
+6                0.0    50.620433       66.519282       23198.182182   
+7                0.0    44.666244       67.204893       21545.773177   
+8                0.0    51.014242       66.459080       42215.086938   
+9                0.0    53.726384       66.471217       28458.528915   
+10               0.0    48.307017       66.670099       20592.206761   
+11               0.0    55.978573       65.281468      104046.490691   
+12               0.0    70.604296       66.480980       20273.962463   
+13               0.0    45.699077       67.072877       21032.390175   
+14               0.0    48.929340       66.677323       20691.906751   
+
+    yearly_income     total_debt  credit_score  num_credit_cards  \
+0    39727.054624   55411.492743    609.620866          2.428332   
+1    36129.665747   11144.852313    729.599907          5.474394   
+2    36616.100290   19165.508227    730.230493          5.213118   
+3    82576.206863  112451.201740    710.288301          3.724159   
+4    42265.867589   54828.729425    723.778465          3.990858   
+5    46415.763974   57921.148235    711.680693          3.814749   
+6    45550.743549   61042.429323    711.081870          3.543425   
+7    43885.982889   65723.243408    720.259512          3.341799   
+8    85198.876456  113289.149118    710.544888          3.747230   
+9    56084.221332   64814.254345    712.180600          3.890169   
+10   41483.766077   59273.740600    718.249452          3.495751   
+11  205112.276973  243299.297789    668.899538          3.723243   
+12   35576.490915   21117.212426    729.793201          5.083615   
+13   42761.222364   63657.575807    725.852492          3.419745   
+14   41333.323912   57286.140881    716.797723          3.558969   
+
+    transaction_hour  transaction_day  transaction_month  transaction_year  \
+0          12.126166        15.840121           7.584086       2014.291521   
+1          12.174151        15.422134           3.355140       2014.414528   
+2          12.134731        15.895775           9.659786       2012.519584   
+3          12.156942        15.633670           3.481924       2014.800526   
+4          12.513810        15.702549           5.901059       2011.810869   
+5          12.321857        15.702807           6.455419       2014.561271   
+6          12.394260        15.668221           6.339258       2014.533543   
+7          12.635813        15.867109           9.450303       2016.956252   
+8          12.113265        15.853726           9.465354       2014.474855   
+9          13.674303        15.693671           6.409916       2014.483414   
+10         12.505342        15.495984           3.358043       2012.453739   
+11         12.960566        15.753097           6.426114       2014.461980   
+12         12.018065        16.143520           9.083988       2016.990572   
+13         12.609979        15.955625           9.716779       2012.540698   
+14         12.457907        15.497522           3.389493       2017.173952   
+
+    transaction_weekday  transaction_quarter  day_of_year  week_of_year  \
+0              2.988301             2.860740   215.327853     31.080319   
+1              3.015975             1.465571    86.327121     13.021155   
+2              2.983135             3.544308   278.824252     39.891281   
+3              3.007408             1.495308    90.373455     13.592283   
+4              2.982664             2.309063   164.020166     23.879003   
+5              2.986316             2.490494   180.993682     26.289999   
+6              2.998791             2.453741   177.360793     25.775127   
+7              3.020062             3.491367   272.381517     39.270665   
+8              2.996248             3.491210   272.837940     39.158594   
+9              2.999585             2.474573   179.557654     26.062281   
+10             2.989707             1.460538    86.500173     13.045293   
+11             2.994155             2.477553   180.150787     26.180690   
+12             3.000192             3.362062   261.460198     37.709604   
+13             2.984452             3.560221   280.627781     40.143284   
+14             3.025688             1.471489    87.427623     13.138403   
+
+    expires_month  expires_year  cluster    count  
+0        6.945580   2021.469408        0   756236  
+1        6.328135   2021.716982        1  1016127  
+2        6.266371   2021.562634        2   919415  
+3        6.891285   2021.593451        3   729111  
+4        7.028044   2014.260446        4   518406  
+5        6.383081   2021.393472        5    52545  
+6        6.534273   2021.752099        6   864109  
+7        6.336720   2021.809423        7  1373373  
+8        6.922344   2021.553387        8   637712  
+9        6.502747   2021.503621        9   113230  
+10       6.222652   2021.814360       10  1874130  
+11       7.291836   2021.562995       11   101459  
+12       6.161135   2021.692900       12   834703  
+13       6.192419   2021.754904       13  1623285  
+14       6.277892   2021.743490       14  1892074  
+2025-02-14 02:30:13,661 - src.config - INFO - Cluster interpretation:
+        amount  use_chip  merchant_city  merchant_state          mcc     errors  card_brand     card_type  credit_limit  year_pin_last_changed  card_on_dark_web  current_age  retirement_age  per_capita_income  yearly_income     total_debt  credit_score  num_credit_cards  transaction_hour  transaction_day  transaction_month  transaction_year  transaction_weekday  transaction_quarter  day_of_year  week_of_year  expires_month  expires_year  cluster    count
+0    36.972870  1.332165    6876.303233       95.062187  5366.694264  20.986108    2.356870  1.075221e+00  11610.714782            2011.462964               0.0    54.644431       62.007944       21518.015864   39727.054624   55411.492743    609.620866          2.428332         12.126166        15.840121           7.584086       2014.291521             2.988301             2.860740   215.327853     31.080319       6.945580   2021.469408        0   756236
+1    37.152329  1.309411    6693.567628       96.206610  5566.197041  20.980690    2.340910  7.506293e-01  13865.668638            2011.215662               0.0    77.370993       67.032399       21608.586121   36129.665747   11144.852313    729.599907          5.474394         12.174151        15.422134           3.355140       2014.414528             3.015975             1.465571    86.327121     13.021155       6.328135   2021.716982        1  1016127
+2    35.427249  1.903835    6484.540394       90.291036  5611.477498  20.979790    2.329432  7.449572e-01  13244.987598            2010.991098               0.0    72.054633       66.911341       20861.513146   36616.100290   19165.508227    730.230493          5.213118         12.134731        15.895775           9.659786       2012.519584             2.983135             3.544308   278.824252     39.891281       6.266371   2021.562634        2   919415
+3    51.502630  1.159504    7206.046902       97.856534  5496.911508  20.986721    2.350907  8.233209e-01  32019.647156            2011.229745               0.0    50.268904       66.527955       40874.193329   82576.206863  112451.201740    710.288301          3.724159         12.156942        15.633670           3.481924       2014.800526             3.007408             1.495308    90.373455     13.592283       6.891285   2021.593451        3   729111
+4    37.564076  1.839220    6223.863619      101.307424  5556.000650  20.977652    2.274941  8.020012e-01  13754.291949            2011.119876               0.0    53.194446       66.306056       22098.749628   42265.867589   54828.729425    723.778465          3.990858         12.513810        15.702549           5.901059       2011.810869             2.982664             2.309063   164.020166     23.879003       7.028044   2014.260446        4   518406
+5    47.433571  1.110534    6827.501494      104.844628  5363.534570   9.509792    2.292968  9.524979e-01  16431.735198            2011.306023               0.0    54.143325       66.409725       23939.729280   46415.763974   57921.148235    711.680693          3.814749         12.321857        15.702807           6.455419       2014.561271             2.986316             2.490494   180.993682     26.289999       6.383081   2021.393472        5    52545
+6    47.490397  1.148348    6266.761507      107.837474  5558.194342  20.977754    0.125581 -7.492895e-13  11695.387112            2011.348896               0.0    50.620433       66.519282       23198.182182   45550.743549   61042.429323    711.081870          3.543425         12.394260        15.668221           6.339258       2014.533543             2.998791             2.453741   177.360793     25.775127       6.534273   2021.752099        6   864109
+7    37.157578  0.198423    6078.718935      101.941490  5558.035426  20.981443    2.386956  7.909883e-01  14043.439516            2011.817965               0.0    44.666244       67.204893       21545.773177   43885.982889   65723.243408    720.259512          3.341799         12.635813        15.867109           9.450303       2016.956252             3.020062             3.491367   272.381517     39.270665       6.336720   2021.809423        7  1373373
+8    52.559844  1.227028    7290.034101       95.740909  5503.393659  20.986848    2.340127  8.135564e-01  33187.351501            2011.184113               0.0    51.014242       66.459080       42215.086938   85198.876456  113289.149118    710.544888          3.747230         12.113265        15.853726           9.465354       2014.474855             2.996248             3.491210   272.837940     39.158594       6.922344   2021.553387        8   637712
+9   561.855636  1.190165    6665.049493       98.992661  4765.984544  20.998923    2.125411  4.433886e-01  17609.070398            2011.414756               0.0    53.726384       66.471217       28458.528915   56084.221332   64814.254345    712.180600          3.890169         13.674303        15.693671           6.409916       2014.483414             2.999585             2.474573   179.557654     26.062281       6.502747   2021.503621        9   113230
+10   35.099464  1.920938    5821.941313      101.340471  5623.112205  20.981408    2.391854  8.115851e-01  12802.294162            2010.986315               0.0    48.307017       66.670099       20592.206761   41483.766077   59273.740600    718.249452          3.495751         12.505342        15.495984           3.358043       2012.453739             2.989707             1.460538    86.500173     13.045293       6.222652   2021.814360       10  1874130
+11   59.789341  1.273228    6518.023901      129.705453  5621.251279  20.974828    2.470880  8.358581e-01  64020.256611            2011.830536               0.0    55.978573       65.281468      104046.490691  205112.276973  243299.297789    668.899538          3.723243         12.960566        15.753097           6.426114       2014.461980             2.994155             2.477553   180.150787     26.180690       7.291836   2021.562995       11   101459
+12   33.964441  0.173571    6093.380702       97.278845  5644.677848  20.979177    2.356672  8.198350e-01  13070.609174            2011.660508               0.0    70.604296       66.480980       20273.962463   35576.490915   21117.212426    729.793201          5.083615         12.018065        16.143520           9.083988       2016.990572             3.000192             3.362062   261.460198     37.709604       6.161135   2021.692900       12   834703
+13   35.396348  1.922837    5714.592785      105.813408  5628.961502  20.981581    2.384716  7.934278e-01  13293.237672            2011.082158               0.0    45.699077       67.072877       21032.390175   42761.222364   63657.575807    725.852492          3.419745         12.609979        15.955625           9.716779       2012.540698             2.984452             3.560221   280.627781     40.143284       6.192419   2021.754904       13  1623285
+14   35.503564  0.194690    6010.024238      100.182945  5584.565748  20.981029    2.386728  8.202332e-01  13206.805766            2011.732783               0.0    48.929340       66.677323       20691.906751   41333.323912   57286.140881    716.797723          3.558969         12.457907        15.497522           3.389493       2017.173952             3.025688             1.471489    87.427623     13.138403       6.277892   2021.743490       14  1892074
+2025-02-14 02:30:13,662 - src.config - INFO - Saving customer segmentation model and scaler.
+2025-02-14 02:30:13,780 - src.config - DEBUG - Customer segmentation model and scaler saved in /Users/sathyanarayanan/Desktop/github/Financial Transactions/models
+2025-02-14 02:31:37,421 - src.config - DEBUG - CustomerSegmentation initialized with 5 clusters and features: ['amount', 'use_chip', 'merchant_city', 'merchant_state', 'mcc', 'errors', 'card_brand', 'card_type', 'credit_limit', 'year_pin_last_changed', 'card_on_dark_web', 'current_age', 'retirement_age', 'per_capita_income', 'yearly_income', 'total_debt', 'credit_score', 'num_credit_cards', 'transaction_hour', 'transaction_day', 'transaction_month', 'transaction_year', 'transaction_weekday', 'transaction_quarter', 'day_of_year', 'week_of_year', 'expires_month', 'expires_year']
+2025-02-14 02:31:37,426 - src.config - INFO - Tuning customer segmentation model using silhouette score and inertia metric.
+2025-02-14 02:32:02,602 - src.config - DEBUG - CustomerSegmentation initialized with 5 clusters and features: ['amount', 'use_chip', 'merchant_city', 'merchant_state', 'mcc', 'errors', 'card_brand', 'card_type', 'credit_limit', 'year_pin_last_changed', 'card_on_dark_web', 'current_age', 'retirement_age', 'per_capita_income', 'yearly_income', 'total_debt', 'credit_score', 'num_credit_cards', 'transaction_hour', 'transaction_day', 'transaction_month', 'transaction_year', 'transaction_weekday', 'transaction_quarter', 'day_of_year', 'week_of_year', 'expires_month', 'expires_year']
+2025-02-14 02:32:02,605 - src.config - INFO - Tuning customer segmentation model using silhouette score and inertia metric.
+2025-02-14 02:32:25,378 - matplotlib - DEBUG - matplotlib data path: /opt/homebrew/lib/python3.11/site-packages/matplotlib/mpl-data
+2025-02-14 02:32:25,381 - matplotlib - DEBUG - CONFIGDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-14 02:32:25,453 - matplotlib - DEBUG - interactive is False
+2025-02-14 02:32:25,453 - matplotlib - DEBUG - platform is darwin
+2025-02-14 02:32:25,482 - matplotlib - DEBUG - CACHEDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-14 02:32:25,484 - matplotlib.font_manager - DEBUG - Using fontManager instance from /Users/sathyanarayanan/.matplotlib/fontlist-v390.json
+2025-02-14 02:34:24,998 - matplotlib - DEBUG - matplotlib data path: /opt/homebrew/lib/python3.11/site-packages/matplotlib/mpl-data
+2025-02-14 02:34:25,001 - matplotlib - DEBUG - CONFIGDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-14 02:34:25,018 - matplotlib - DEBUG - interactive is False
+2025-02-14 02:34:25,019 - matplotlib - DEBUG - platform is darwin
+2025-02-14 02:34:25,049 - matplotlib - DEBUG - CACHEDIR=/Users/sathyanarayanan/.matplotlib
+2025-02-14 02:34:25,051 - matplotlib.font_manager - DEBUG - Using fontManager instance from /Users/sathyanarayanan/.matplotlib/fontlist-v390.json
+2025-02-14 02:34:25,212 - src.config - INFO - Starting main pipeline execution.
+2025-02-14 02:34:25,212 - src.config - DEBUG - DataLoader initialized with file paths.
+2025-02-14 02:34:25,213 - src.config - INFO - Loading transactions from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/transactions_data.csv
+2025-02-14 02:34:37,262 - src.config - DEBUG - Transactions loaded with shape (13305915, 12)
+2025-02-14 02:34:37,266 - src.config - INFO - Loading cards from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/cards_data.csv
+2025-02-14 02:34:37,276 - src.config - DEBUG - Cards loaded with shape (6146, 13)
+2025-02-14 02:34:37,276 - src.config - INFO - Loading users from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/users_data.csv
+2025-02-14 02:34:37,285 - src.config - DEBUG - Users loaded with shape (2000, 14)
+2025-02-14 02:34:37,292 - src.config - INFO - Loading fraud labels from /Users/sathyanarayanan/Desktop/github/Financial Transactions/data/train_fraud_labels.json
+2025-02-14 02:34:43,022 - src.config - DEBUG - Fraud labels loaded with shape (8914963, 2)
+2025-02-14 02:34:43,074 - src.config - DEBUG - Preprocessor initialized.
+2025-02-14 02:34:43,074 - src.config - INFO - Preprocessing transactions.
+2025-02-14 02:34:51,143 - src.config - DEBUG - Transactions preprocessed. Shape: (13305915, 12)
+2025-02-14 02:34:51,200 - src.config - INFO - Preprocessing cards.
+2025-02-14 02:34:51,204 - src.config - DEBUG - Cards preprocessed. Shape: (6146, 13)
+2025-02-14 02:34:51,241 - src.config - INFO - Merging datasets.
+2025-02-14 02:38:08,907 - src.config - INFO - Performing common processing on dataframe.
+2025-02-14 02:38:09,004 - src.config - DEBUG - Processing 'date' column.
+2025-02-14 02:38:12,313 - src.config - DEBUG - Processed 'date' column.
+2025-02-14 02:38:12,314 - src.config - DEBUG - Processing 'expires' column.
+2025-02-14 02:38:48,899 - src.config - DEBUG - Processed 'expires' column.
+2025-02-14 02:39:11,110 - src.config - DEBUG - Dropped columns: ['date', 'acct_open_date', 'expires', 'card_number', 'cvv', 'transaction_id']
+2025-02-14 02:39:26,255 - src.config - DEBUG - Processing monetary column: amount
+2025-02-14 02:39:40,353 - src.config - DEBUG - Processed monetary column: amount
+2025-02-14 02:39:40,356 - src.config - DEBUG - Processing monetary column: per_capita_income
+2025-02-14 02:39:49,551 - src.config - DEBUG - Processed monetary column: per_capita_income
+2025-02-14 02:39:49,553 - src.config - DEBUG - Processing monetary column: yearly_income
+2025-02-14 02:39:59,258 - src.config - DEBUG - Processed monetary column: yearly_income
+2025-02-14 02:39:59,261 - src.config - DEBUG - Processing monetary column: total_debt
+2025-02-14 02:40:08,559 - src.config - DEBUG - Processed monetary column: total_debt
+2025-02-14 02:40:08,563 - src.config - DEBUG - Processing monetary column: credit_limit
+2025-02-14 02:40:18,033 - src.config - DEBUG - Processed monetary column: credit_limit
+2025-02-14 02:40:18,290 - src.config - DEBUG - Label encoding column: use_chip
+2025-02-14 02:40:19,621 - src.config - DEBUG - Label encoded column: use_chip
+2025-02-14 02:40:19,621 - src.config - DEBUG - Label encoding column: merchant_city
+2025-02-14 02:40:21,689 - src.config - DEBUG - Label encoded column: merchant_city
+2025-02-14 02:40:21,691 - src.config - DEBUG - Label encoding column: merchant_state
+2025-02-14 02:40:23,040 - src.config - DEBUG - Label encoded column: merchant_state
+2025-02-14 02:40:23,041 - src.config - DEBUG - Label encoding column: errors
+2025-02-14 02:40:24,188 - src.config - DEBUG - Label encoded column: errors
+2025-02-14 02:40:24,189 - src.config - DEBUG - Label encoding column: card_brand
+2025-02-14 02:40:25,559 - src.config - DEBUG - Label encoded column: card_brand
+2025-02-14 02:40:25,560 - src.config - DEBUG - Label encoding column: card_type
+2025-02-14 02:40:26,869 - src.config - DEBUG - Label encoded column: card_type
+2025-02-14 02:40:26,871 - src.config - DEBUG - Label encoding column: has_chip
+2025-02-14 02:40:28,017 - src.config - DEBUG - Label encoded column: has_chip
+2025-02-14 02:40:28,017 - src.config - DEBUG - Label encoding column: card_on_dark_web
+2025-02-14 02:40:29,153 - src.config - DEBUG - Label encoded column: card_on_dark_web
+2025-02-14 02:40:29,153 - src.config - DEBUG - Label encoding column: gender
+2025-02-14 02:40:30,362 - src.config - DEBUG - Label encoded column: gender
+2025-02-14 02:40:30,416 - src.config - DEBUG - Common processing completed. Shape: (13305915, 44)
+2025-02-14 02:40:32,192 - src.config - DEBUG - Data merged successfully. Final shape: (13305915, 44)
+2025-02-14 02:41:15,781 - src.config - INFO - Processed dataframe for unsupervised learning. Shape: (13305915, 41)
+2025-02-14 02:42:57,236 - src.config - DEBUG - CustomerSegmentation initialized with 5 clusters and features: ['amount', 'use_chip', 'merchant_city', 'merchant_state', 'mcc', 'errors', 'card_brand', 'card_type', 'credit_limit', 'year_pin_last_changed', 'card_on_dark_web', 'current_age', 'retirement_age', 'per_capita_income', 'yearly_income', 'total_debt', 'credit_score', 'num_credit_cards', 'transaction_hour', 'transaction_day', 'transaction_month', 'transaction_year', 'transaction_weekday', 'transaction_quarter', 'day_of_year', 'week_of_year', 'expires_month', 'expires_year']
+2025-02-14 02:42:57,249 - src.config - INFO - Tuning customer segmentation model using silhouette score and inertia metric.
+2025-02-14 02:51:12,683 - src.config - DEBUG - CustomerSegmentation initialized with 5 clusters and features: ['amount', 'use_chip', 'merchant_city', 'merchant_state', 'mcc', 'errors', 'card_brand', 'card_type', 'credit_limit', 'year_pin_last_changed', 'card_on_dark_web', 'current_age', 'retirement_age', 'per_capita_income', 'yearly_income', 'total_debt', 'credit_score', 'num_credit_cards', 'transaction_hour', 'transaction_day', 'transaction_month', 'transaction_year', 'transaction_weekday', 'transaction_quarter', 'day_of_year', 'week_of_year', 'expires_month', 'expires_year']
+2025-02-14 02:51:12,687 - src.config - INFO - Tuning customer segmentation model using inertia metric.
+2025-02-14 02:52:04,493 - src.config - INFO - KMeans with k=3 has inertia: 302966264.43
+2025-02-14 02:52:32,552 - src.config - INFO - KMeans with k=5 has inertia: 284617784.63
+2025-02-14 02:53:00,464 - src.config - INFO - KMeans with k=7 has inertia: 275009613.75
+2025-02-14 02:53:32,490 - src.config - INFO - KMeans with k=9 has inertia: 259583799.29
+2025-02-14 02:53:32,500 - src.config - INFO - Best number of clusters found: 9 with inertia: 259583799.29
+2025-02-14 02:54:18,820 - src.config - INFO - Best number of clusters found: 9
+2025-02-14 02:54:18,838 - src.config - INFO - Predicting customer segments.
+2025-02-14 02:54:30,584 - src.config - DEBUG - Customer segments predicted.
+2025-02-14 02:54:30,861 - src.config - INFO - Interpreting clusters.
+2025-02-14 02:54:42,473 - src.config - INFO - Cluster interpretation completed.
+2025-02-14 02:54:42,480 - src.config - DEBUG - Cluster centroids and counts:
+      amount  use_chip  merchant_city  merchant_state          mcc     errors  \
+0  38.524113  1.909514    6005.495970      101.048983  5588.934561  20.981627   
+1  38.882849  0.262098    6166.748720      100.222936  5558.683987  20.981490   
+2  40.390132  1.355270    6793.757905       93.886312  5556.732963  20.980799   
+3  73.218063  1.179850    7222.016526       95.427480  5499.900790  20.987063   
+4  38.490463  1.907249    6065.739845      100.098509  5591.216875  20.981591   
+5  47.753289  1.110561    6826.673148      104.854982  5363.208680   9.510645   
+6  57.693840  1.174530    6303.337283      107.009159  5552.384512  20.978371   
+7  38.789962  0.223871    6120.495870      100.437632  5555.235129  20.981583   
+8  68.563118  1.252044    6508.455866      127.123630  5593.533750  20.976958   
+
+   card_brand  card_type  credit_limit  year_pin_last_changed  \
+0    2.382506   0.830363  13684.475921            2011.070966   
+1    2.382678   0.826080  13835.192502            2011.679928   
+2    2.367131   0.758286  14244.072752            2011.269894   
+3    2.380700   0.811185  34318.839967            2011.227720   
+4    2.385893   0.821640  13494.425565            2011.021170   
+5    2.293004   0.952472  16431.786126            2011.306246   
+6    0.148145   0.000007  12001.584633            2011.395449   
+7    2.381166   0.831579  13953.489041            2011.749353   
+8    2.407635   0.860764  60983.100976            2011.383869   
+
+   card_on_dark_web  current_age  retirement_age  per_capita_income  \
+0               0.0    49.363536       66.292357       21642.306807   
+1               0.0    53.090972       66.508559       21484.523394   
+2               0.0    78.493483       67.174285       22005.259110   
+3               0.0    48.687248       66.560863       43054.675079   
+4               0.0    53.332108       66.389154       21438.734072   
+5               0.0    54.142335       66.408969       23938.446032   
+6               0.0    51.716095       66.589338       23765.373167   
+7               0.0    49.962602       66.441879       21572.952683   
+8               0.0    59.136524       64.560859       99762.156770   
+
+   yearly_income     total_debt  credit_score  num_credit_cards  \
+0   43163.711423   59802.213110    711.041115          3.476428   
+1   41874.858467   51797.034601    713.721407          3.774672   
+2   36825.866612   10498.556941    734.776808          5.675044   
+3   86193.582397  132425.853970    708.260085          3.585199   
+4   41869.374419   52196.838299    713.597383          3.763379   
+5   46410.108621   57924.621131    711.665671          3.814228   
+6   46385.223742   58519.611492    713.845971          3.679274   
+7   42805.188078   57552.786793    711.325092          3.550003   
+8  198799.249888  211439.064754    654.109575          3.658635   
+
+   transaction_hour  transaction_day  transaction_month  transaction_year  \
+0         12.449209        15.917633           9.714500       2012.394033   
+1         12.393653        15.506307           3.366162       2017.121806   
+2         12.221141        15.960601           8.239955       2014.194256   
+3         12.177261        15.769277           6.254738       2014.638658   
+4         12.430987        15.478197           3.324648       2012.418364   
+5         12.320858        15.702734           6.455165       2014.561445   
+6         12.437334        15.697420           6.365711       2014.432787   
+7         12.410555        15.908032           9.446933       2016.960121   
+8         12.853151        15.745168           6.439730       2014.428782   
+
+   transaction_weekday  transaction_quarter  day_of_year  week_of_year  \
+0             2.983491             3.560158   280.523012     40.130545   
+1             3.022065             1.464268    86.735462     13.042358   
+2             2.991100             3.075435   235.487387     33.892119   
+3             3.000917             2.418789   174.813942     25.432425   
+4             2.994628             1.452238    85.473366     12.908883   
+5             2.986244             2.490420   180.985825     26.288913   
+6             2.998422             2.459908   178.208058     25.889246   
+7             3.014343             3.491220   272.316871     39.256869   
+8             2.993524             2.482917   180.560792     26.229786   
+
+   expires_month  expires_year  cluster    count  
+0       6.368899   2021.061313        0  2515478  
+1       6.333775   2021.750783        1  2498455  
+2       6.334714   2021.585062        2  1278301  
+3       6.928793   2021.425007        3   946813  
+4       6.348144   2021.020392        4  2814835  
+5       6.382332   2021.392835        5    52559  
+6       6.619500   2021.556279        6   967451  
+7       6.362664   2021.787776        7  2113388  
+8       7.271802   2021.540260        8   118635  
+2025-02-14 02:54:42,724 - src.config - INFO - Cluster interpretation:
+      amount  use_chip  merchant_city  merchant_state          mcc     errors  card_brand  card_type  credit_limit  year_pin_last_changed  card_on_dark_web  current_age  retirement_age  per_capita_income  yearly_income     total_debt  credit_score  num_credit_cards  transaction_hour  transaction_day  transaction_month  transaction_year  transaction_weekday  transaction_quarter  day_of_year  week_of_year  expires_month  expires_year  cluster    count
+0  38.524113  1.909514    6005.495970      101.048983  5588.934561  20.981627    2.382506   0.830363  13684.475921            2011.070966               0.0    49.363536       66.292357       21642.306807   43163.711423   59802.213110    711.041115          3.476428         12.449209        15.917633           9.714500       2012.394033             2.983491             3.560158   280.523012     40.130545       6.368899   2021.061313        0  2515478
+1  38.882849  0.262098    6166.748720      100.222936  5558.683987  20.981490    2.382678   0.826080  13835.192502            2011.679928               0.0    53.090972       66.508559       21484.523394   41874.858467   51797.034601    713.721407          3.774672         12.393653        15.506307           3.366162       2017.121806             3.022065             1.464268    86.735462     13.042358       6.333775   2021.750783        1  2498455
+2  40.390132  1.355270    6793.757905       93.886312  5556.732963  20.980799    2.367131   0.758286  14244.072752            2011.269894               0.0    78.493483       67.174285       22005.259110   36825.866612   10498.556941    734.776808          5.675044         12.221141        15.960601           8.239955       2014.194256             2.991100             3.075435   235.487387     33.892119       6.334714   2021.585062        2  1278301
+3  73.218063  1.179850    7222.016526       95.427480  5499.900790  20.987063    2.380700   0.811185  34318.839967            2011.227720               0.0    48.687248       66.560863       43054.675079   86193.582397  132425.853970    708.260085          3.585199         12.177261        15.769277           6.254738       2014.638658             3.000917             2.418789   174.813942     25.432425       6.928793   2021.425007        3   946813
+4  38.490463  1.907249    6065.739845      100.098509  5591.216875  20.981591    2.385893   0.821640  13494.425565            2011.021170               0.0    53.332108       66.389154       21438.734072   41869.374419   52196.838299    713.597383          3.763379         12.430987        15.478197           3.324648       2012.418364             2.994628             1.452238    85.473366     12.908883       6.348144   2021.020392        4  2814835
+5  47.753289  1.110561    6826.673148      104.854982  5363.208680   9.510645    2.293004   0.952472  16431.786126            2011.306246               0.0    54.142335       66.408969       23938.446032   46410.108621   57924.621131    711.665671          3.814228         12.320858        15.702734           6.455165       2014.561445             2.986244             2.490420   180.985825     26.288913       6.382332   2021.392835        5    52559
+6  57.693840  1.174530    6303.337283      107.009159  5552.384512  20.978371    0.148145   0.000007  12001.584633            2011.395449               0.0    51.716095       66.589338       23765.373167   46385.223742   58519.611492    713.845971          3.679274         12.437334        15.697420           6.365711       2014.432787             2.998422             2.459908   178.208058     25.889246       6.619500   2021.556279        6   967451
+7  38.789962  0.223871    6120.495870      100.437632  5555.235129  20.981583    2.381166   0.831579  13953.489041            2011.749353               0.0    49.962602       66.441879       21572.952683   42805.188078   57552.786793    711.325092          3.550003         12.410555        15.908032           9.446933       2016.960121             3.014343             3.491220   272.316871     39.256869       6.362664   2021.787776        7  2113388
+8  68.563118  1.252044    6508.455866      127.123630  5593.533750  20.976958    2.407635   0.860764  60983.100976            2011.383869               0.0    59.136524       64.560859       99762.156770  198799.249888  211439.064754    654.109575          3.658635         12.853151        15.745168           6.439730       2014.428782             2.993524             2.482917   180.560792     26.229786       7.271802   2021.540260        8   118635
+2025-02-14 02:54:42,726 - src.config - INFO - Saving customer segmentation model and scaler.
+2025-02-14 02:54:42,835 - src.config - DEBUG - Customer segmentation model and scaler saved in /Users/sathyanarayanan/Desktop/github/Financial Transactions/models
